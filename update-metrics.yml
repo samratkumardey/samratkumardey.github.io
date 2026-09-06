@@ -1,0 +1,49 @@
+name: Update citation metrics
+
+# Refreshes data/metrics.json from OpenAlex and commits it if anything changed.
+# The site also fetches OpenAlex live in the browser as a fallback, so this
+# workflow is an optimisation (fast, cached, works offline) rather than a
+# dependency — if it ever stops running, the numbers still appear.
+
+on:
+  schedule:
+    - cron: '17 4 * * *'      # 04:17 UTC daily — off the hour to avoid GitHub's peak
+  workflow_dispatch:           # lets you run it on demand from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - 'data/publications.json'   # new paper added -> refresh straight away
+      - 'scripts/update-metrics.mjs'
+      - 'assets/js/metrics-core.js'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-metrics
+  cancel-in-progress: false
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch metrics from OpenAlex
+        run: node scripts/update-metrics.mjs
+
+      - name: Commit if changed
+        run: |
+          if [[ -z "$(git status --porcelain data/metrics.json)" ]]; then
+            echo "No change — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/metrics.json
+          git commit -m "Update citation metrics [skip ci]"
+          git push

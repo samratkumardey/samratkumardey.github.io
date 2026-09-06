@@ -161,6 +161,79 @@ The site reads whatever is there. You are never locked in.
 
 ---
 
+## 3b. Live citation metrics
+
+The stats strip, the "Citation record" section and the citation badge on every publication are
+**not typed in by hand** — they come from [OpenAlex](https://openalex.org), the open scholarly
+database. No API key, no account, no cost.
+
+### How the numbers are produced
+
+OpenAlex builds author profiles by automatic disambiguation, and yours currently contains a
+few papers by other people with similar names (a mango fruit-fly genetics paper, an alpha-decay
+physics paper). So the site does **not** display OpenAlex's profile totals. Instead:
+
+1. It pulls every candidate work from the OpenAlex author profile.
+2. It keeps only those that match a publication already in `data/publications.json` — by DOI
+   first, then by normalised title.
+3. It recomputes citations, h-index and i10-index **from that verified subset**.
+
+Two consequences worth knowing. Your displayed h-index will be lower than the number on your
+raw OpenAlex or Google Scholar page, because it covers only the 52 papers listed here — that is
+the honest figure for this list, and it rises as you add publications. And where a link on this
+site points at a *correction* or *preprint* DOI rather than the version of record, the matcher
+takes whichever record carries more citations, so those papers are not under-counted.
+
+### Two paths, so it always works
+
+- **Cached** — `.github/workflows/update-metrics.yml` runs `scripts/update-metrics.mjs` nightly
+  (and whenever `publications.json` changes), writing `data/metrics.json` and committing it.
+  Instant page loads, no third-party request from the visitor's browser.
+- **Live** — if that file is missing or more than three days old, the page fetches OpenAlex
+  directly in the browser after rendering, then upgrades the numbers in place. This is why the
+  feature works from the very first deploy, before the Action has ever run.
+
+If both fail, the page falls back to the static figures in `site.json → stats`. Nothing breaks.
+
+### Running it manually
+
+**Actions tab → Update citation metrics → Run workflow.** Or locally:
+
+```bash
+node scripts/update-metrics.mjs
+```
+
+The script also writes a `candidatesNotOnSite` list into `metrics.json`: cited papers on your
+OpenAlex profile that are **not** in your publication list. Check it occasionally — it catches
+new papers you have not added yet. It will also list papers that are not yours, so read it
+rather than copying it in wholesale.
+
+### Adding a paper
+
+Add it in the admin panel with its DOI in the URL field. The Action re-runs on that commit and
+picks up its citations automatically.
+
+## 3c. Analytics (optional, privacy-friendly)
+
+Off by default — a fresh clone makes **zero** third-party requests. To turn it on, set
+`meta.analytics` in `data/site.json` (Admin → **Site & profile** → `meta` → `analytics`):
+
+**[GoatCounter](https://www.goatcounter.com/)** — free for personal use, no cookies, no consent
+banner needed. Sign up, pick a site code, then set:
+
+```json
+"analytics": { "provider": "goatcounter", "code": "your-site-code" }
+```
+
+**[Plausible](https://plausible.io/)** — paid, also cookieless:
+
+```json
+"analytics": { "provider": "plausible", "code": "samratkumardey.github.io" }
+```
+
+Leave `provider` empty to disable. Neither option sets cookies or collects personal data, which
+is why no consent banner is required — worth keeping true if you ever add a European audience.
+
 ## 4. Running it locally
 
 `fetch()` is blocked on `file://` URLs, so open it through a local server:

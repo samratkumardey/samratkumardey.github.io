@@ -431,6 +431,71 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
   font-weight: 620; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
 .stat__label { font-size: .79rem; color: var(--ink-3); margin-top: .4rem; letter-spacing: .01em; }
 
+/* ---------- 9b. Citation metrics ---------- */
+.stat__live {
+  display: inline-block; width: 6px; height: 6px; vertical-align: middle;
+  color: var(--success); font-size: 8px; line-height: 1;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+.stat__note {
+  margin: .85rem 0 0; font-size: .78rem; color: var(--ink-3); text-align: center;
+}
+.mini-head {
+  font-family: var(--font-sans); font-size: .74rem; font-weight: 700;
+  letter-spacing: .11em; text-transform: uppercase; color: var(--ink-3);
+  margin-bottom: 1.1rem;
+}
+
+.cchart {
+  display: flex; align-items: flex-end; gap: .4rem;
+  min-height: 210px; padding-bottom: .25rem;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.cbar { flex: 1 1 0; min-width: 30px; display: flex; flex-direction: column; align-items: center; }
+.cbar__col {
+  width: 100%; height: 150px; display: flex; align-items: flex-end;
+  border-radius: 5px 5px 0 0; background: var(--surface-2);
+}
+.cbar__col > span {
+  display: block; width: 100%; border-radius: 5px 5px 0 0;
+  background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 62%, transparent));
+  transition: filter .15s;
+}
+.cbar:hover .cbar__col > span { filter: brightness(1.15); }
+.cbar--partial .cbar__col > span {
+  background: repeating-linear-gradient(135deg, var(--accent) 0 6px,
+    color-mix(in srgb, var(--accent) 55%, transparent) 6px 12px);
+}
+.cbar__n {
+  font-size: .74rem; font-weight: 650; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; margin-top: .35rem;
+}
+.cbar__y { font-size: .7rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.cbar__y::before { content: "’"; }
+
+.top-cited { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; counter-reset: tc; }
+.top-cited li { display: flex; gap: .8rem; align-items: flex-start; margin: 0; }
+.top-cited__n {
+  flex: none; min-width: 3.1rem; text-align: right;
+  font-family: var(--font-serif); font-size: 1.28rem; font-weight: 620;
+  color: var(--accent); line-height: 1.25; font-variant-numeric: tabular-nums;
+}
+.top-cited li > span:last-child { font-size: .89rem; line-height: 1.45; }
+.top-cited a { color: var(--ink); font-weight: 550; }
+.top-cited a:hover { color: var(--accent); text-decoration: none; }
+.top-cited small { display: block; color: var(--ink-3); font-size: .78rem; margin-top: .15rem; }
+
+.chip--cite {
+  background: var(--gold-soft); color: var(--gold); border-color: transparent;
+  gap: .28rem;
+}
+.chip--cite svg { width: 12px; height: 12px; }
+
+@media (max-width: 760px) {
+  .cchart { min-height: 170px; }
+  .cbar__col { height: 115px; }
+}
+
 /* ---------- 10. Timeline (experience / education) ---------- */
 .timeline { position: relative; padding-left: 1.9rem; }
 .timeline::before {

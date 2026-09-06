@@ -61,6 +61,7 @@
     cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
     database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/>',
     chart: '<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',
+    quote: '<path d="M9 7H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"/><path d="M19 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"/>',
     bot: '<rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 8V4M8 2h8"/><circle cx="8.5" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="1.2" fill="currentColor" stroke="none"/>',
     branch: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6M18 12c0 4-6 2-6 6"/>',
     book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
@@ -129,6 +130,77 @@
     return cache[name];
   }
   window.SKDLoad = loadJSON;
+
+  /* ------------------------------------------------------------- metrics */
+  // Citation counts, keyed by publication id. Filled in during boot().
+  let CITES = {};
+
+  /**
+   * Citation metrics, cache-first.
+   *   1. data/metrics.json, written nightly by the GitHub Action — instant.
+   *   2. if that is missing or older than three days, fetch OpenAlex live in
+   *      the browser (cached in sessionStorage for an hour).
+   * The live path means the feature works from the first page load, before the
+   * Action has ever run, and keeps working if the Action is ever disabled.
+   */
+  async function readCachedMetrics() {
+    const cached = await loadJSON('metrics');
+    if (!cached || !cached.totals) return null;
+    const age = cached.updated ? Date.now() - Date.parse(cached.updated) : Infinity;
+    return age < 3 * 864e5 ? cached : null;
+  }
+
+  async function fetchLiveMetrics(site, pubs) {
+    try {
+      const s = JSON.parse(sessionStorage.getItem('skd-metrics') || 'null');
+      if (s && Date.now() - s.t < 36e5) return s.m;
+    } catch (e) { /* private mode */ }
+
+    const id = site.meta && site.meta.openAlexAuthorId;
+    if (!id || !window.SKDMetrics || !pubs || !pubs.length) return null;
+
+    try {
+      const m = await window.SKDMetrics.build(pubs, id);
+      try {
+        sessionStorage.setItem('skd-metrics', JSON.stringify({ t: Date.now(), m: m }));
+      } catch (e) { /* quota or private mode */ }
+      return m;
+    } catch (err) {
+      console.warn('[metrics] live lookup failed:', err.message);
+      // Fall back to a stale cache rather than showing nothing.
+      const stale = await loadJSON('metrics');
+      return stale && stale.totals ? stale : null;
+    }
+  }
+
+  function applyMetrics(data, m) {
+    if (!m || !m.totals || !m.totals.citations) return false;
+    data.metrics = m;
+    if (m.works) {
+      Object.keys(m.works).forEach((k) => { CITES[k] = m.works[k].citations; });
+    }
+    return true;
+  }
+
+  /* ----------------------------------------------------------- analytics */
+  // Only loads if data/site.json actually names a provider, so a fresh clone
+  // ships with no third-party requests at all.
+  function initAnalytics(site) {
+    const a = (site.meta && site.meta.analytics) || {};
+    if (!a.provider || !a.code) return;
+    const s = document.createElement('script');
+    s.defer = true;
+    if (a.provider === 'goatcounter') {
+      s.src = 'https://gc.zgo.at/count.js';
+      s.setAttribute('data-goatcounter', 'https://' + a.code + '.goatcounter.com/count');
+    } else if (a.provider === 'plausible') {
+      s.src = 'https://plausible.io/js/script.js';
+      s.setAttribute('data-domain', a.code);
+    } else {
+      return;
+    }
+    document.head.appendChild(s);
+  }
 
   async function loadAll(names) {
     const vals = await Promise.all(names.map(loadJSON));
@@ -292,17 +364,100 @@
       '</div>';
   };
 
+  const nfmt = (n) => Number(n || 0).toLocaleString('en-US');
+
   R.stats = function (el, d) {
     const pubs = d.publications || [];
-    const stats = (d.site.stats || []).slice();
-    // Keep publication counts honest: derive from the data, not a hard-coded number.
-    if (stats[0]) stats[0].value = pubs.length;
-    if (stats[1]) stats[1].value = pubs.filter((p) => p.type === 'journal').length;
-    if (stats[2]) stats[2].value = (d.grants || []).length;
-    el.innerHTML = '<div class="wrap"><div class="stats">' + stats.map((s) =>
-      '<div class="stat"><div class="stat__value">' + esc(s.value) + esc(s.suffix || '') +
-      '</div><div class="stat__label">' + esc(s.label) + '</div></div>').join('') +
-      '</div></div>';
+    const m = d.metrics;
+    let tiles;
+
+    if (m && m.totals && m.totals.citations) {
+      // Live figures. h-index and i10 come from the papers listed on this site,
+      // not from the raw OpenAlex author profile — see metrics-core.js.
+      tiles = [
+        { label: 'Peer-reviewed publications', value: pubs.length },
+        { label: 'Citations', value: nfmt(m.totals.citations), live: true },
+        { label: 'h-index', value: m.totals.hIndex, live: true },
+        { label: 'i10-index', value: m.totals.i10Index, live: true },
+        { label: 'Funded grants & projects', value: (d.grants || []).length },
+      ];
+    } else {
+      const stats = (d.site.stats || []).slice();
+      if (stats[0]) stats[0].value = pubs.length;
+      if (stats[1]) stats[1].value = pubs.filter((p) => p.type === 'journal').length;
+      if (stats[2]) stats[2].value = (d.grants || []).length;
+      tiles = stats;
+    }
+
+    el.innerHTML = '<div class="wrap"><div class="stats">' + tiles.map((s) =>
+      '<div class="stat">' +
+        '<div class="stat__value">' + esc(s.value) + esc(s.suffix || '') + '</div>' +
+        '<div class="stat__label">' + esc(s.label) +
+          (s.live ? ' <span class="stat__live" title="Updated automatically from OpenAlex">' +
+            '&#9679;</span>' : '') +
+        '</div>' +
+      '</div>').join('') + '</div>' +
+      (m && m.totals && m.totals.citations ? '<p class="stat__note">Citation figures via ' +
+        '<a href="' + esc(m.sourceUrl || 'https://openalex.org') + '" target="_blank" ' +
+        'rel="noopener">OpenAlex</a>, matched to the publications listed here and refreshed ' +
+        'automatically' + (m.updated ? ' &middot; last updated ' +
+        esc(fmtDate(m.updated.slice(0, 10))) : '') + '.</p>' : '') +
+      '</div>';
+  };
+
+  /** Citation impact: per-year bar chart + most-cited papers. */
+  R.citations = function (el, d) {
+    const m = d.metrics;
+    // Hidden (not just empty) until numbers exist, so it leaves no blank gap.
+    if (!m || !m.totals || !m.totals.citations) { el.innerHTML = ''; el.hidden = true; return; }
+    el.hidden = false;
+
+    const series = (m.citationsByYear || []).filter((r) => r[0] >= 2014);
+    const max = series.reduce((a, r) => Math.max(a, r[1]), 0) || 1;
+    const thisYear = new Date().getFullYear();
+
+    const bars = series.map((r) => {
+      const pct = Math.max(2, Math.round((r[1] / max) * 100));
+      const partial = r[0] === thisYear;
+      return '<div class="cbar' + (partial ? ' cbar--partial' : '') + '" ' +
+        'title="' + esc(r[1]) + ' citations in ' + esc(r[0]) +
+        (partial ? ' (year in progress)' : '') + '">' +
+        '<div class="cbar__col"><span style="height:' + pct + '%"></span></div>' +
+        '<div class="cbar__n">' + esc(r[1]) + '</div>' +
+        '<div class="cbar__y">' + esc(String(r[0]).slice(2)) + '</div>' +
+      '</div>';
+    }).join('');
+
+    const top = (d.publications || [])
+      .map((p) => ({ p: p, c: (m.works && m.works[p.id] ? m.works[p.id].citations : 0) }))
+      .filter((x) => x.c > 0)
+      .sort((a, b) => b.c - a.c)
+      .slice(0, 5);
+
+    el.innerHTML =
+      '<div class="wrap">' +
+        '<div class="section-head"><span class="eyebrow">Impact</span>' +
+          '<h2>Citation record</h2>' +
+          '<p>' + esc(nfmt(m.totals.citations)) + ' citations across ' +
+            esc(m.totals.matchedWorks) + ' indexed papers. Counts come from OpenAlex and ' +
+            'update on their own &mdash; nothing here is typed in by hand.</p></div>' +
+        '<div class="grid" style="grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);' +
+          'gap:2.5rem;align-items:start">' +
+          '<div>' +
+            '<h3 class="mini-head">Citations received per year</h3>' +
+            '<div class="cchart">' + bars + '</div>' +
+          '</div>' +
+          '<div>' +
+            '<h3 class="mini-head">Most cited</h3>' +
+            '<ol class="top-cited">' + top.map((x) =>
+              '<li><span class="top-cited__n">' + esc(nfmt(x.c)) + '</span>' +
+              '<span>' + (x.p.url ? '<a href="' + esc(x.p.url) + '"' + linkAttrs(x.p.url) + '>' +
+                esc(x.p.title) + '</a>' : esc(x.p.title)) +
+              '<small>' + esc(x.p.venue || '') + ' &middot; ' + esc(x.p.year) + '</small>' +
+              '</span></li>').join('') + '</ol>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
   };
 
   R.about = function (el, d) {
@@ -410,7 +565,9 @@
     const t = p.url
       ? '<a href="' + esc(p.url) + '"' + linkAttrs(p.url) + '>' + esc(p.title) + '</a>'
       : esc(p.title);
-    return '<li class="pub" data-type="' + esc(p.type) + '" data-year="' + esc(p.year) + '">' +
+    const cites = CITES[p.id];
+    return '<li class="pub" data-type="' + esc(p.type) + '" data-year="' + esc(p.year) + '" ' +
+      'data-cites="' + esc(cites == null ? -1 : cites) + '">' +
       '<span class="pub__ref">' + esc(p.id) + '</span>' +
       '<div>' +
         '<div class="pub__title">' + t + '</div>' +
@@ -418,6 +575,8 @@
         (p.venue ? '<div class="pub__venue">' + esc(p.venue) + '</div>' : '') +
         '<div class="pub__foot">' +
           '<span class="chip pub__year">' + esc(p.year) + '</span>' +
+          (cites ? '<span class="chip chip--cite" title="Citations, via OpenAlex">' +
+            icon('quote') + esc(nfmt(cites)) + '</span>' : '') +
           (p.publisher ? '<span class="chip chip--accent">' + esc(p.publisher) + '</span>' : '') +
           (p.tags || []).map((x) => '<span class="chip">' + esc(x) + '</span>').join('') +
           (p.url ? '<a class="btn btn--sm btn--ghost" href="' + esc(p.url) + '"' +
@@ -462,6 +621,12 @@
           '<select class="form-select" id="pubYear" style="width:auto;min-width:120px" ' +
             'aria-label="Filter by year"><option value="">All years</option>' +
             years.map((y) => '<option>' + y + '</option>').join('') + '</select>' +
+          '<select class="form-select" id="pubSort" style="width:auto;min-width:150px" ' +
+            'aria-label="Sort publications">' +
+            '<option value="year">Newest first</option>' +
+            (d.metrics && d.metrics.totals ? '<option value="cites">Most cited</option>' : '') +
+            '<option value="oldest">Oldest first</option>' +
+          '</select>' +
         '</div>' +
         '<p class="muted" id="pubCount" style="font-size:.86rem;margin-bottom:1.5rem"></p>' +
         '<div class="pub-groups" id="pubGroups">' +
@@ -502,6 +667,19 @@
       state.type = b.dataset.v; apply();
     }));
     $('#pubYear', el).addEventListener('change', function () { state.year = this.value; apply(); });
+    $('#pubSort', el).addEventListener('change', function () {
+      const mode = this.value;
+      $$('#pubGroups section', el).forEach((sec) => {
+        const ul = $('.pub-list', sec);
+        const rows = $$('.pub', ul);
+        rows.sort((a, b) => {
+          if (mode === 'cites') return (+b.dataset.cites) - (+a.dataset.cites);
+          if (mode === 'oldest') return (+a.dataset.year) - (+b.dataset.year);
+          return (+b.dataset.year) - (+a.dataset.year);
+        });
+        rows.forEach((r) => ul.appendChild(r));
+      });
+    });
     let t;
     $('#pubSearch', el).addEventListener('input', function () {
       const v = this.value.trim().toLowerCase();
@@ -899,8 +1077,12 @@
   }
 
   /* --------------------------------------------------------- page setup */
+  // Renderers that want live citation numbers.
+  const WANTS_METRICS = ['stats', 'citations', 'publicationsAll', 'publicationsFeatured'];
+
   const DEPS = {
     hero: ['site'], stats: ['site', 'publications', 'grants'], about: ['site'],
+    citations: ['publications'],
     researchFeatured: ['research'], researchAll: ['research'],
     publicationsFeatured: ['publications'], publicationsAll: ['publications'],
     newsRecent: ['news'], newsAll: ['news'], experience: ['experience'],
@@ -984,8 +1166,20 @@
     renderHeader(data.site);
     renderFooter(data.site);
     renderTicker(data.news);
+    initAnalytics(data.site);
 
-    blocks.forEach((b) => {
+    // Citation numbers are a progressive enhancement. The cached file (written
+    // nightly by the GitHub Action) is applied before first paint because it
+    // costs nothing. A live OpenAlex lookup — needed only until that Action has
+    // run, or if it is ever disabled — happens AFTER the page is drawn, so a
+    // slow or unreachable API can never delay or break the page.
+    const metricBlocks = blocks.filter((b) => WANTS_METRICS.indexOf(b.dataset.render) > -1);
+    let livePending = false;
+    if (metricBlocks.length) {
+      livePending = !applyMetrics(data, await readCachedMetrics());
+    }
+
+    const paint = (list) => list.forEach((b) => {
       const fn = R[b.dataset.render];
       if (!fn) { console.warn('No renderer for', b.dataset.render); return; }
       try { fn(b, data); } catch (err) {
@@ -993,6 +1187,16 @@
         b.innerHTML = '<div class="wrap"><div class="callout">This section failed to render.</div></div>';
       }
     });
+
+    paint(blocks);
+
+    if (livePending) {
+      fetchLiveMetrics(data.site, data.publications).then((m) => {
+        if (!applyMetrics(data, m)) return;
+        paint(metricBlocks);
+        reveal();
+      });
+    }
 
     // Fill any element marked with data-bind="path.in.site.json"
     $$('[data-bind]').forEach((n) => {
