@@ -1,0 +1,37 @@
+[
+  {
+    "id": "g01",
+    "image": "assets/img/gallery/bd-robot-olympiad-judge.jpg",
+    "caption": "Judging the Bangladesh Robot Olympiad",
+    "category": "Service",
+    "date": "2023"
+  },
+  {
+    "id": "g02",
+    "image": "assets/img/gallery/achievement-barisal.jpg",
+    "caption": "Achievement ceremony, Barisal",
+    "category": "Awards",
+    "date": ""
+  },
+  {
+    "id": "g03",
+    "image": "assets/img/gallery/proud-moment.jpg",
+    "caption": "A proud moment",
+    "category": "Awards",
+    "date": ""
+  },
+  {
+    "id": "g04",
+    "image": "assets/img/gallery/cse-2020.jpg",
+    "caption": "With the CSE department team",
+    "category": "Teaching",
+    "date": "2020"
+  },
+  {
+    "id": "g05",
+    "image": "assets/img/gallery/samrat.jpg",
+    "caption": "Portrait",
+    "category": "Portrait",
+    "date": ""
+  }
+]

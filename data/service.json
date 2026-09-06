@@ -1,0 +1,21 @@
+{
+  "editorial": [
+    { "role": "Lead Guest Editor", "org": "Special Issue on Data-Driven Decision Making in Healthcare Informatics", "url": "", "period": "" },
+    { "role": "Academic Editor", "org": "PLoS ONE, Public Library of Science", "url": "https://journals.plos.org/plosone/", "period": "" },
+    { "role": "Academic Editor", "org": "Journal of Computational and Mathematical Methods, Wiley", "url": "", "period": "" }
+  ],
+  "memberships": [
+    { "role": "Professional Member", "org": "Institute of Electrical and Electronics Engineers (IEEE)", "url": "https://www.ieee.org/", "period": "" },
+    { "role": "Professional Member", "org": "Association for Computing Machinery (ACM)", "url": "https://www.acm.org/", "period": "" },
+    { "role": "Member", "org": "ACM Special Interest Group on Computer-Human Interaction (SIGCHI)", "url": "https://sigchi.org/", "period": "" },
+    { "role": "Member Affairs Secretary", "org": "Bangladesh Data Science Society (BDDSS)", "url": "", "period": "" },
+    { "role": "Associate Member", "org": "Bangladesh Computer Society", "url": "", "period": "" }
+  ],
+  "leadership": [
+    { "role": "Advisor", "org": "Computer Programming Club (CPC), Bangladesh Open University", "url": "", "period": "" },
+    { "role": "Former Faculty Advisor", "org": "CodeChef Chapter, Dhaka International University", "url": "", "period": "" },
+    { "role": "Former Mentor", "org": "BASIS Students Forum, Dhaka International University", "url": "", "period": "" },
+    { "role": "Former Advisor", "org": "Computer Programming Club (CPC), Dhaka International University", "url": "", "period": "" }
+  ],
+  "reviewer": []
+}

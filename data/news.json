@@ -1,0 +1,101 @@
+[
+  {
+    "id": "n2025-08-01",
+    "date": "2025-08-01",
+    "type": "position",
+    "title": "Joined the iDAS Lab at MU as a Graduate Research Assistant",
+    "summary": "Started PhD studies in Informatics (Medical Informatics) at the University of Missouri-Columbia, working with Prof. Dr. Chi-Ren Shyu at the MU Institute for Data Science and Informatics.",
+    "url": "https://muidsi.missouri.edu/",
+    "linkLabel": "MU IDSI",
+    "image": "",
+    "pinned": true
+  },
+  {
+    "id": "n2025-06-29",
+    "date": "2025-06-29",
+    "type": "position",
+    "title": "Promoted to Assistant Professor, Bangladesh Open University",
+    "summary": "Appointed Assistant Professor of Computer Science in the School of Science and Technology, Bangladesh Open University (currently on study leave).",
+    "url": "https://bou.ac.bd/SSTFacultyMember/199111251521",
+    "linkLabel": "Faculty profile",
+    "image": "",
+    "pinned": false
+  },
+  {
+    "id": "n2025-02-01",
+    "date": "2025-02-01",
+    "type": "paper",
+    "title": "New paper in Neuroscience Informatics (Elsevier)",
+    "summary": "\"Analyzing Infant Cry to Detect Birth Asphyxia Using a Hybrid CNN and Feature Extraction Approach\" is now available.",
+    "url": "https://doi.org/10.1016/j.neuri.2025.100193",
+    "linkLabel": "Read the paper",
+    "image": "assets/img/elsevier.jpg",
+    "pinned": true
+  },
+  {
+    "id": "n2025-01-15",
+    "date": "2025-01-15",
+    "type": "paper",
+    "title": "Paper published in J. Umm Al-Qura Univ. Eng. Archit. (Springer)",
+    "summary": "\"A comprehensive strategy for identifying plagiarism in academic submissions\".",
+    "url": "https://doi.org/10.1007/s43995-025-00108-1",
+    "linkLabel": "Read the paper",
+    "image": "",
+    "pinned": false
+  },
+  {
+    "id": "n2024-07-01",
+    "date": "2024-07-01",
+    "type": "award",
+    "title": "AI for Good — Innovate for Impact Award",
+    "summary": "Recognised at the AI for Good Global Summit (ITU) and WAIC 2024 for work applying AI to public-health problems.",
+    "url": "https://drive.google.com/file/d/1ctnT5SsCT5IIxORG29LLjSl5EmC5K7Sg/view?usp=sharing",
+    "linkLabel": "Certificate",
+    "image": "",
+    "pinned": true
+  },
+  {
+    "id": "n2024-06-01",
+    "date": "2024-06-01",
+    "type": "award",
+    "title": "Nominated to the India Science and Research Fellowship 2024-25",
+    "summary": "Nomination by the Bangladesh Academy of Science (BAS).",
+    "url": "https://drive.google.com/file/d/1iZKkhd6hxcoSzFL85jrjZ7Rf-5WYAo9Z/view?usp=sharing",
+    "linkLabel": "Details",
+    "image": "",
+    "pinned": false
+  },
+  {
+    "id": "n2024-05-20",
+    "date": "2024-05-20",
+    "type": "paper",
+    "title": "Systematic review published in IEEE Access",
+    "summary": "\"Machine Learning-Based Opinion Spam Detection: A Systematic Literature Review\".",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10528318",
+    "linkLabel": "Read the paper",
+    "image": "",
+    "pinned": false
+  },
+  {
+    "id": "n2024-04-10",
+    "date": "2024-04-10",
+    "type": "paper",
+    "title": "Federated deep learning for monkeypox detection — IEEE Access",
+    "summary": "\"Federated deep learning for monkeypox disease detection on GAN-augmented dataset\".",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10445472",
+    "linkLabel": "Read the paper",
+    "image": "",
+    "pinned": false
+  },
+  {
+    "id": "n2024-03-01",
+    "date": "2024-03-01",
+    "type": "award",
+    "title": "Most Accurate Deep Model Creator — AI in Public Health Workshop",
+    "summary": "Awarded at the AI in Public Health Workshop 2024.",
+    "url": "https://chrfbd.org/blogs/1d9693bf-20ce-419f-92d4-0ed018482e19",
+    "linkLabel": "Workshop write-up",
+    "image": "",
+    "pinned": false
+  }
+]

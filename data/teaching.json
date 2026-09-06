@@ -1,0 +1,19 @@
+{
+  "intro": "Ten years of university teaching in computer science and engineering across Bangladesh Open University and Dhaka International University — including open and distance learning cohorts. I teach both the theory and the corresponding laboratory course for most subjects.",
+  "theory": [
+    { "code": "CSE2135", "title": "Data Structure", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE2137", "title": "Object Oriented Programming", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE2234", "title": "Information System Analysis and Design", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE3232", "title": "Human-Computer Interaction", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE4133", "title": "Artificial Intelligence", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE4234", "title": "Mobile Application Development", "level": "Undergraduate", "institution": "BOU / DIU" }
+  ],
+  "lab": [
+    { "code": "CSE21P6", "title": "Data Structure Lab", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE21P8", "title": "Object Oriented Programming-I Lab", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE22P5", "title": "Information System Analysis and Design Lab", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE31P8", "title": "Object Oriented Programming-II Lab", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE41P4", "title": "Artificial Intelligence Lab", "level": "Undergraduate", "institution": "BOU / DIU" },
+    { "code": "CSE42P5", "title": "Mobile Application Development Lab", "level": "Undergraduate", "institution": "BOU / DIU" }
+  ]
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "gr01",
+    "title": "Classification of Infant Cry for Detection of Birth Asphyxia on Baby Chillanto Database Using Deep and Machine Learning Approaches",
+    "role": "Principal Investigator",
+    "funder": "ICT Innovation Grant, ICT Division, Ministry of Posts, Telecommunications and Information Technology, Government of the People's Republic of Bangladesh",
+    "location": "Dhaka, Bangladesh",
+    "period": "",
+    "amount": "",
+    "url": "",
+    "summary": "Deep and classical machine learning models for early detection of birth asphyxia from infant cry signals."
+  },
+  {
+    "id": "gr02",
+    "title": "Predicting Crops Yield for Smallholder Farmers: A Data-Driven Approach with Hybrid (CNN-LSTM) Deep Model",
+    "role": "Principal Investigator",
+    "funder": "Research and Development (R&D) Grant, Ministry of Science and Technology (MOST), People's Republic of Bangladesh",
+    "location": "Dhaka, Bangladesh",
+    "period": "",
+    "amount": "",
+    "url": "",
+    "summary": "A hybrid CNN-LSTM forecasting model for crop yield prediction targeted at smallholder farming contexts."
+  },
+  {
+    "id": "gr03",
+    "title": "Identifying the role of ChatGPT in Teaching and Learning Practice",
+    "role": "Principal Investigator",
+    "funder": "Bangladesh Open University Research Grant, Fiscal Year 2023-24",
+    "location": "Gazipur, Bangladesh",
+    "period": "2023-24",
+    "amount": "",
+    "url": "",
+    "summary": "Empirical study of large language model use in open and distance education."
+  },
+  {
+    "id": "gr04",
+    "title": "Alignment and Evaluation of Course Outcome and Program Outcome in the Context of Students Learning Experience at BOU: OBE-based Web Application Architecture",
+    "role": "Principal Investigator",
+    "funder": "Bangladesh Open University Research Grant, Fiscal Year 2022-23",
+    "location": "Gazipur, Bangladesh",
+    "period": "2022-23",
+    "amount": "",
+    "url": "",
+    "summary": "Outcome-based education analytics and a supporting web application architecture."
+  },
+  {
+    "id": "gr05",
+    "title": "MUJIB BORSHO IT CARNIVAL 2020",
+    "role": "Convener",
+    "funder": "ICT Special Grants, Ministry of Posts, Telecommunications and Information Technology, Government of the People's Republic of Bangladesh",
+    "location": "Dhaka, Bangladesh",
+    "period": "2020",
+    "amount": "",
+    "url": "",
+    "summary": "National IT carnival organised for the Mujib Borsho celebration."
+  },
+  {
+    "id": "gr06",
+    "title": "ParkEasy: A Smartphone Based Approach to Mitigate Car Parking Problems Using IoT at Dhaka City",
+    "role": "Principal Investigator",
+    "funder": "ICT Innovation Fund, Ministry of Posts, Telecommunications and Information Technology, Government of the People's Republic of Bangladesh",
+    "location": "Dhaka, Bangladesh",
+    "period": "",
+    "amount": "",
+    "url": "https://doi.org/10.1109/ICASERT.2019.8934480",
+    "summary": "IoT-based smart parking system prototype for dense urban environments."
+  },
+  {
+    "id": "gr07",
+    "title": "Study the Challenges and Opportunities of Mobile Health in Bangladesh: Regional Exposures and Health Consequences in Context to Bangladesh",
+    "role": "Principal Supervisor",
+    "funder": "Research Grant sanctioned by Dhaka International University Research Cell",
+    "location": "Dhaka, Bangladesh",
+    "period": "",
+    "amount": "",
+    "url": "",
+    "summary": "Mixed-methods study of mHealth adoption, barriers and regional health outcomes."
+  }
+]

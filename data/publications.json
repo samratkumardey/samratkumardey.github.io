@@ -1,0 +1,870 @@
+[
+  {
+    "id": "J25",
+    "ref": "[J25]",
+    "type": "journal",
+    "year": 2025,
+    "authors": "Dey, S.K., Uddin, K.M.M., Howlader, A., Rahman, M.M., Babu, H.M.H., Biswas, N., and Mazumder, B",
+    "title": "Analyzing Infant Cry to Detect Birth Asphyxia Using a Hybrid CNN and Feature Extraction Approach",
+    "venue": "Neuroscience Informatics",
+    "url": "https://doi.org/10.1016/j.neuri.2025.100193",
+    "publisher": "Elsevier",
+    "featured": true,
+    "image": "assets/img/elsevier.jpg",
+    "tags": [
+      "Neonatal Health",
+      "Medical Imaging",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J24",
+    "ref": "[J24]",
+    "type": "journal",
+    "year": 2025,
+    "authors": "Setu, D.M., Islam, T., Erfan, Md., Dey, S.K., Asif, Md. R.A., and Samsuddoha, Md",
+    "title": "A comprehensive strategy for identifying plagiarism in academic submissions",
+    "venue": "J. Umm Al-Qura Univ. Eng. Archit",
+    "url": "https://doi.org/10.1007/s43995-025-00108-1/",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "HCI & Education"
+    ]
+  },
+  {
+    "id": "J23",
+    "ref": "[J23]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "Sifath, S., Islam, T., Erfan, M., Dey, S. K., Islam, M. M. U., Samsuddoha, M., & Rahman, T",
+    "title": "Recurrent neural network based multiclass cyber bullying classification",
+    "venue": "Natural Language Processing Journal, 100111",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2949719124000591",
+    "publisher": "Elsevier",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J22",
+    "ref": "[J22]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "Qazi, A., Hasan, N., Mao, R., Abo, M. E. M., Dey, S. K., & Hardaker, G",
+    "title": "Machine Learning-Based Opinion Spam Detection: A Systematic Literature Review",
+    "venue": "IEEE Access",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10528318",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J21",
+    "ref": "[J21]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "TKundu, D., Rahman, M. M., Dey, S. K., Rahman, A., Das, D., Siddiqi, U. R., Alam, M. G. R.,... & Ali, Z",
+    "title": "Federated deep learning for monkeypox disease detection on gan-augmented dataset",
+    "venue": "IEEE Access",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10445472",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Epidemiology & Public Health",
+      "Federated Learning",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J20",
+    "ref": "[J20]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "Taifa, I. A., Setu, D. M., Islam, T., Dey, S. K., & Rahman, T",
+    "title": "A hybrid approach with customized machine learning classifiers and multiple feature extractors for enhancing diabetic retinopathy detection",
+    "venue": "Healthcare Analytics, 100346",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2772442524000480",
+    "publisher": "Elsevier",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Medical Imaging",
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J19",
+    "ref": "[J19]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "Uddin, K. M. M., Nahid, M. N. H., Ullah, M. M. H., Mazumder, B., Khan, M. S. I., & Dey, S. K",
+    "title": "Machine Learning-Based Chronic Kidney Cancer Prediction Application: A Predictive Analytics Approach",
+    "venue": "Biomedical Materials & Devices, 2(2), 1028-1048",
+    "url": "https://link.springer.com/article/10.1007/s44174-023-00133-5",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J18",
+    "ref": "[J18]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "Uddin, K. M. M., Dey, S. K., & Babu, H. M. H",
+    "title": "A Voice assistive mobile application tool to detect cardiovascular disease using machine learning approach",
+    "venue": "Biomedical Materials & Devices, 2(2), 1246-1257",
+    "url": "https://link.springer.com/article/10.1007/s44174-024-00170-8",
+    "publisher": "Springer",
+    "featured": true,
+    "image": "assets/img/voice.jpg",
+    "tags": [
+      "Medical Imaging",
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J17",
+    "ref": "[J17]",
+    "type": "journal",
+    "year": 2024,
+    "authors": "Uddin, K. M. M., Al Mamun, A., Chakrabarti, A., Mostafiz, R., & Dey, S. K",
+    "title": "An ensemble machine learning-based approach to predict cervical cancer using hybrid feature selection",
+    "venue": "Neuroscience Informatics, 4(3), 100169",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2772528624000141",
+    "publisher": "Elsevier",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Medical Imaging",
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J16",
+    "ref": "[J16]",
+    "type": "journal",
+    "year": 2023,
+    "authors": "Uddin, K. M. M., Biswas, N., Rikta, S. T., & Dey, S. K",
+    "title": "Machine learning-based diagnosis of breast cancer utilizing feature optimization technique",
+    "venue": "Computer Methods and Programs in Biomedicine Update, 3, 100098",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2666990023000071",
+    "publisher": "Elsevier",
+    "featured": true,
+    "image": "assets/img/bcancer.jpg",
+    "tags": [
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J15",
+    "ref": "[J15]",
+    "type": "journal",
+    "year": 2023,
+    "authors": "Dey, S. K., Rahman, M. M., Shibly, K. H., Siddiqi, U. R., & Howlader, A",
+    "title": "Epidemic trend analysis of SARS‐CoV‐2 in South Asian Association for Regional Cooperation countries using modified susceptible‐infected‐recovered predictive model",
+    "venue": "Engineering Reports, 5(1), e12550",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/eng2.12550",
+    "publisher": "Wiley",
+    "featured": true,
+    "image": "assets/img/saarc.jpg",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "J14",
+    "ref": "[J14]",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Uddin, K. M. M., Dey, S. K., Babu, H. M. H., Mostafiz, R., Uddin, S., Shoombuatong, W., & Moni, M. A",
+    "title": "Feature fusion based VGGFusionNet model to detect COVID-19 patients utilizing computed tomography scan images",
+    "venue": "Scientific Reports, 12(1), 21796",
+    "url": "https://www.nature.com/articles/s41598-022-25539-x",
+    "publisher": "Springer Nature",
+    "featured": true,
+    "image": "assets/img/nature.jpg",
+    "tags": [
+      "Epidemiology & Public Health",
+      "Medical Imaging"
+    ]
+  },
+  {
+    "id": "J13",
+    "ref": "[J13]",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Dey, S. K., Uddin, K. M. M., Babu, H. M. H., Rahman, M. M., Howlader, A., & Uddin, K. A",
+    "title": "Chi2-MI: A hybrid feature selection based machine learning approach in diagnosis of chronic kidney disease",
+    "venue": "Intelligent Systems with Applications, 16, 200144",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2667305322000813",
+    "publisher": "Elsevier",
+    "featured": true,
+    "image": "assets/img/chi.jpg",
+    "tags": [
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J12",
+    "ref": "[J12]",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Biswas, N., Uddin, K. M. M., Rikta, S. T., & Dey, S. K",
+    "title": "A comparative analysis of machine learning classifiers for stroke prediction: A predictive analytics approach",
+    "venue": "Healthcare Analytics, 2, 100116",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2772442522000569",
+    "publisher": "Elsevier",
+    "featured": true,
+    "image": "assets/img/stroke.jpg",
+    "tags": [
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J11",
+    "ref": "[J11]",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Rahman, M. M., Kundu, D., Suha, S. A., Siddiqi, U. R., & Dey, S. K",
+    "title": "Hospital patients’ length of stay prediction: A federated learning approach",
+    "venue": "Journal of King Saud University-Computer and Information Sciences, 34(10), 7874-7884",
+    "url": "http://doi.org/10.1016/j.jksuci.2022.07.006",
+    "publisher": "Elsevier",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Federated Learning"
+    ]
+  },
+  {
+    "id": "J10",
+    "ref": "[J10]",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Dey, S. K., Rahman, M. M., Howlader, A., Siddiqi, U. R., Uddin, K. M. M., Borhan, R., & Rahman, E. U",
+    "title": "Prediction of dengue incidents using hospitalized patients, metrological and socio-economic data in Bangladesh: A machine learning approach",
+    "venue": "PloS one, 17(7), e0270933",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0270933",
+    "publisher": "PLOS",
+    "featured": true,
+    "image": "assets/img/plos-one.jpg",
+    "tags": [
+      "Epidemiology & Public Health",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J9",
+    "ref": "[J9]",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Dey, S. K., Rahman, M. M., Siddiqi, U. R., Howlader, A., Tushar, M. A., & Qazi, A",
+    "title": "Global landscape of COVID-19 vaccination progress: insight from an exploratory data analysis",
+    "venue": "Human vaccines & immunotherapeutics, 18(1), 2025009",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/21645515.2021.2025009",
+    "publisher": "Taylor & Francis",
+    "featured": true,
+    "image": "assets/img/vaccine.jpg",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "J8",
+    "ref": "[J8]",
+    "type": "journal",
+    "year": 2021,
+    "authors": "Alghazzawi, D., Qazi, A., Qazi, J., Naseer, K., Zeeshan, M., Abo, M. E. M., Dey, S. K., & Yang, S",
+    "title": "Prediction of the infectious outbreak COVID-19 and prevalence of anxiety: global evidence",
+    "venue": "Sustainability, 13(20), 11339",
+    "url": "https://www.mdpi.com/2071-1050/13/20/11339",
+    "publisher": "MDPI",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "J7",
+    "ref": "[J7]",
+    "type": "journal",
+    "year": 2021,
+    "authors": "Majib, M. S., Rahman, M. M., Sazzad, T. S., Khan, N. I., & Dey, S. K",
+    "title": "Vgg-scnet: A vgg net-based deep learning framework for brain tumor detection on mri images",
+    "venue": "IEEE Access, 9, 116942-116952",
+    "url": "https://ieeexplore.ieee.org/document/9515947",
+    "publisher": "IEEE",
+    "featured": true,
+    "image": "assets/img/vgg.jpg",
+    "tags": [
+      "Medical Imaging",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J6",
+    "ref": "[J6]",
+    "type": "journal",
+    "year": 2021,
+    "authors": "Uddin, K. M. M., Dey, S. K., Parvez, G. U., Mukta, A. S., & Acharjee, U. K",
+    "title": "MirrorME: implementation of an IoT based smart mirror through facial recognition and personalized information recommendation algorithm",
+    "venue": "International journal of information technology, 13(6), 2313-2322",
+    "url": "https://link.springer.com/article/10.1007/s41870-021-00801-z",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "J5",
+    "ref": "[J5]",
+    "type": "journal",
+    "year": 2021,
+    "authors": "Uddin, K. M. M., Ghani, M. R., Ahsan, K. H., Mostafiz, R., & Dey, S. K",
+    "title": "CarryIT: design and Implementation of an effective parcel carrying system",
+    "venue": "International Journal of Education and Management Engineering, 11(3), 20",
+    "url": "http://www.mecs-press.net/ijeme/ijeme-v11-n3/v11n3-3.html",
+    "publisher": "MECS Press",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "J4",
+    "ref": "[J4]",
+    "type": "journal",
+    "year": 2020,
+    "authors": "Dey, S.K., Rahman, M. M., Siddiqi, U. R., & Howlader, A",
+    "title": "Exploring epidemiological behavior of novel coronavirus (COVID-19) outbreak in Bangladesh",
+    "venue": "SN comprehensive clinical medicine, 2(10), 1724-1732",
+    "url": "https://doi.org/10.1007/s42399-020-00517-4",
+    "publisher": "Springer",
+    "featured": true,
+    "image": "assets/img/bdcovid.jpg",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "J3",
+    "ref": "[J3]",
+    "type": "journal",
+    "year": 2020,
+    "authors": "Shibly, K. H., Dey, S. K., Islam, M. T. U., & Rahman, M. M",
+    "title": "COVID faster R–CNN: A novel framework to Diagnose Novel Coronavirus Disease (COVID-19) in X-Ray images",
+    "venue": "Informatics in Medicine Unlocked, 20, 100405",
+    "url": "https://doi.org/10.1016/j.imu.2020.100405",
+    "publisher": "Elsevier",
+    "featured": true,
+    "image": "assets/img/xray.jpg",
+    "tags": [
+      "Epidemiology & Public Health",
+      "Medical Imaging",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "J2",
+    "ref": "[J2]",
+    "type": "journal",
+    "year": 2020,
+    "authors": "Dey, S. K., Rahman, M. M., Siddiqi, U. R., & Howlader, A",
+    "title": "Analyzing the epidemiological outbreak of COVID‐19: A visual exploratory data analysis approach",
+    "venue": "Journal of medical virology, 92(6), 632-638",
+    "url": "https://doi.org/10.1002/jmv.25743",
+    "publisher": "Wiley",
+    "featured": true,
+    "image": "assets/img/jmv.jpg",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "J1",
+    "ref": "[J1]",
+    "type": "journal",
+    "year": 2019,
+    "authors": "Dey, S. K., & Rahman, M. M",
+    "title": "Effects of machine learning approach in flow-based anomaly detection on software-defined networking",
+    "venue": "Symmetry, 12(1), 7",
+    "url": "https://doi.org/10.3390/sym12010007",
+    "publisher": "MDPI",
+    "featured": true,
+    "image": "assets/img/mdpi.jpg",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "Ch10",
+    "ref": "[Ch10]",
+    "type": "chapter",
+    "year": 2024,
+    "authors": "Fatema, K., Dey, S. K., Bari, R., & Mazumder, R",
+    "title": "A Novel Two-Stage Classification Architecture Integrating Machine Learning and Artificial Immune System for Intrusion Detection on Balanced Dataset",
+    "venue": "In International Conference on Information and Communication Technology for Intelligent Systems (pp. 179-189). Singapore: Springer Nature Singapore",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-97-5799-2_16",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "Ch9",
+    "ref": "[Ch9]",
+    "type": "chapter",
+    "year": 2023,
+    "authors": "Tonmoy, M. A. S., Dey, S. K., Islam, T., & Apu, J",
+    "title": "A Data-Driven Approach to Predict Scores in T20 Cricket Match Using Machine Learning Classifier",
+    "venue": "In International Conference on Big Data, IoT and Machine Learning (pp. 727-745). Singapore: Springer Nature Singapore",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-99-8937-9_49",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Medical Imaging",
+      "IoT & Systems",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "Ch8",
+    "ref": "[Ch8]",
+    "type": "chapter",
+    "year": 2023,
+    "authors": "Dey, S. K., Uddin, K. M. M., Saha, D., Akter, L., & Akhter, M",
+    "title": "Evaluating Usability of E-Learning Applications in Bangladesh: A Semiotic and Heuristic Evaluation Approach",
+    "venue": "In The International Conference on Artificial Intelligence and Logistics Engineering (pp. 129-140). Cham: Springer Nature Switzerland",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-031-36115-9_13",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "HCI & Education",
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "Ch7",
+    "ref": "[Ch7]",
+    "type": "chapter",
+    "year": 2023,
+    "authors": "Uddin, K. M. M., Rahman, E. U., Das, P. K., Rashid, M. M. A., & Dey, S. K",
+    "title": "Course Outcomes and Program Outcomes Evaluation with the Recommendation System for the Students",
+    "venue": "In The International Conference on Artificial Intelligence and Logistics Engineering (pp. 1039-1053). Cham: Springer Nature Switzerland",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-031-36115-9_93",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "HCI & Education"
+    ]
+  },
+  {
+    "id": "Ch6",
+    "ref": "[Ch6]",
+    "type": "chapter",
+    "year": 2022,
+    "authors": "Uddin, K. M. M., Dey, S. K., Biswas, N., Das, S. C., Howlader, A., Siddiqi, U. R.,... & Rahman, M. M",
+    "title": "Toward Early Detection of Neonatal Birth Asphyxia Utilizing Ensemble Machine Learning Approach",
+    "venue": "In International Joint Conference on Advances in Computational Intelligence (pp. 39-49). Singapore: Springer Nature Singapore",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-97-0180-3_4",
+    "publisher": "Springer",
+    "featured": true,
+    "image": "assets/img/asphyxia.jpg",
+    "tags": [
+      "Neonatal Health",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "Ch5",
+    "ref": "[Ch5]",
+    "type": "chapter",
+    "year": 2022,
+    "authors": "Kumar Dey, S., Akter, L., Saha, D., Akter, M., & Mahbubur Rahman, M",
+    "title": "DeshiFoodBD: Development of a Bangladeshi Traditional Food Image Dataset and Recognition Model Using Inception V3",
+    "venue": "In Machine Intelligence and Data Science Applications: Proceedings of MIDAS 2021 (pp. 639-648). Singapore: Springer Nature Singapore",
+    "url": "https://link.springer.com/chapter/10.1007/978-981-19-2347-0_50",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Medical Imaging"
+    ]
+  },
+  {
+    "id": "Ch4",
+    "ref": "[Ch4]",
+    "type": "chapter",
+    "year": 2020,
+    "authors": "Dey, S. K., Howlader, A., & Deb, C",
+    "title": "MobileNet mask: a multi-phase face mask detection model to prevent person-to-person transmission of SARS-CoV-2",
+    "venue": "In Proceedings of International Conference on Trends in Computational and Cognitive Engineering: Proceedings of TCCE 2020 (pp. 603-613). Singapore: Springer Singapore",
+    "url": "https://doi.org/10.1007/978-981-33-4673-4_49",
+    "publisher": "Springer",
+    "featured": true,
+    "image": "assets/img/mobilenet.jpg",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "Ch3",
+    "ref": "[Ch3]",
+    "type": "chapter",
+    "year": 2020,
+    "authors": "Howlader, A., & Dey, S. K",
+    "title": "RP-DMAC: Receiver Pivotal Directional MAC with Multichannel for IoT Based WSN",
+    "venue": "In Cyber Security and Computer Science: Second EAI International Conference, ICONCS 2020, Dhaka, Bangladesh, February 15-16, 2020, Proceedings 2 (pp. 43-55). Springer International Publishing",
+    "url": "https://doi.org/10.1007/978-3-030-52856-0_4",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "Ch2",
+    "ref": "[Ch2]",
+    "type": "chapter",
+    "year": 2020,
+    "authors": "Shibly, K. H., Rahman, S., Dey, S. K., & Shamim, S. H",
+    "title": "Advanced artistic style transfer using deep neural network",
+    "venue": "In Cyber Security and Computer Science: Second EAI International Conference, ICONCS 2020, Dhaka, Bangladesh, February 15-16, 2020, Proceedings 2 (pp. 619-628). Springer International Publishing",
+    "url": "https://doi.org/10.1007/978-3-030-52856-0_49",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "Ch1",
+    "ref": "[Ch1]",
+    "type": "chapter",
+    "year": 2020,
+    "authors": "Dey, S. K., Raihan Uddin, M., & Mahbubur Rahman, M",
+    "title": "Performance analysis of SDN-based intrusion detection model with feature selection approach",
+    "venue": "In Proceedings of International Joint Conference on Computational Intelligence: IJCCI 2018 (pp. 483-494). Springer Singapore",
+    "url": "https://doi.org/10.1007/978-981-13-7564-4_41",
+    "publisher": "Springer",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C17",
+    "ref": "[C17]",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Jannat, H. E., Rahman, M. M., Dey, S. K., & Islam, A. M",
+    "title": "Mutual Information on Low-rank Matrix for Effective Intrusion Detection",
+    "venue": "In 2022 4th International Conference on Sustainable Technologies for Industry 4.0 (STI) (pp. 1-5). IEEE",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10103298",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks"
+    ]
+  },
+  {
+    "id": "C16",
+    "ref": "[C16]",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Arif, M. A. I., Kabir, S., Khan, M. F. H., Dey, S. K., & Rahman, M. M",
+    "title": "Machine learning and deep learning based network slicing models for 5G network",
+    "venue": "In 2022 25th International Conference on Computer and Information Technology (ICCIT) (pp. 96-101). IEEE",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10054696",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C15",
+    "ref": "[C15]",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Qazi, A., Qazi, J., Naseer, K., Zeeshan, M., Khan, B., & Dey, S. K",
+    "title": "Sentiment analysis of nationwide lockdown amid COVID 19: evidence from Pakistan",
+    "venue": "In 2022 IEEE 7th International Conference on Information Technology and Digital Applications (ICITDA) (pp. 1-4). IEEE",
+    "url": "https://ieeexplore.ieee.org/abstract/document/9971397",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Epidemiology & Public Health"
+    ]
+  },
+  {
+    "id": "C14",
+    "ref": "[C14]",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Kabir, M. H., Rajib, M. S., Rahman, A. S. M. T., Rahman, M. M., & Dey, S. K",
+    "title": "Network intrusion detection using unsw-nb15 dataset: Stacking machine learning based approach",
+    "venue": "In 2022 International Conference on Advancement in Electrical and Electronic Engineering (ICAEEE) (pp. 1-6). IEEE",
+    "url": "https://ieeexplore.ieee.org/document/9836404?fbclid=IwAR06wjMUWS_uBO-cPIezmByStpCobOQL1JN2nUXq-0_NUOpkSLr61xkai08",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C13",
+    "ref": "[C13]",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Rahman, M. M., Aktar, R., & Dey, S. K",
+    "title": "Design and implementation of a low-cost automated medicine dispenser",
+    "venue": "In 2022 International Conference on Advancement in Electrical and Electronic Engineering (ICAEEE) (pp. 1-6). IEEE",
+    "url": "https://ieeexplore.ieee.org/document/9836380?fbclid=IwAR3vtNwJTzQkRuQJelGE0tASeulqscOnn92Ll_0aGYrS2RbNpGKy5OZMVMA",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "C12",
+    "ref": "[C12]",
+    "type": "conference",
+    "year": 2021,
+    "authors": "Sultana, A., Dey, S. K., & Rahman, M. A",
+    "title": "A Deep CNN based Kaggle Contest Winning Model to Recognize Real-Time Facial Expression",
+    "venue": "In 2021 5th International Conference on Electrical Engineering and Information Communication Technology (ICEEICT) (pp. 1-5). IEEE",
+    "url": "https://ieeexplore.ieee.org/document/9667824",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C11",
+    "ref": "[C11]",
+    "type": "conference",
+    "year": 2021,
+    "authors": "Uddin, K. M. M., Chakraborty, A., Hadi, M. A., Uddin, M. A., & Dey, S. K",
+    "title": "Artificial intelligence based real-time attendance system using face recognition",
+    "venue": "In 2021 5th International Conference on Electrical Engineering and Information Communication Technology (ICEEICT) (pp. 1-6). IEEE",
+    "url": "https://ieeexplore.ieee.org/document/9667836",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "C10",
+    "ref": "[C10]",
+    "type": "conference",
+    "year": 2019,
+    "authors": "Dey, S. K., Akhter, J., & Hasan, M",
+    "title": "RHM: Designing a Customized Health Model for the Union of Ramjibon",
+    "venue": "In 2019 IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON) (pp. 63-67). IEEE",
+    "url": "https://doi.org/10.1109/BECITHCON48839.2019.9063165",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C9",
+    "ref": "[C9]",
+    "type": "conference",
+    "year": 2019,
+    "authors": "Dey, S. K., Shamim, R. R., Islam, M. A., & Rahman, M. M",
+    "title": "ParkEasy: An embedded model to mitigate car parking problems using iot technology",
+    "venue": "In 2019 1st International Conference on Advances in Science, Engineering and Robotics Technology (ICASERT) (pp. 1-7). IEEE",
+    "url": "https://doi.org/10.1109/ICASERT.2019.8934480",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "C8",
+    "ref": "[C8]",
+    "type": "conference",
+    "year": 2019,
+    "authors": "Shibly, K. H., Dey, S. K., Islam, M. A., & Showrav, S. I",
+    "title": "Design and development of hand gesture based virtual mouse",
+    "venue": "In 2019 1st International Conference on Advances in Science, Engineering and Robotics Technology (ICASERT) (pp. 1-5). IEEE",
+    "url": "https://doi.org/10.1109/ICASERT.2019.8934612",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "IoT & Systems"
+    ]
+  },
+  {
+    "id": "C7",
+    "ref": "[C7]",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Dey, S. K., Hossain, A., & Rahman, M. M",
+    "title": "Implementation of a web application to predict diabetes disease: an approach using machine learning algorithm. In 2018 21st international conference of computer and information technology (ICCIT) (pp. 1-5). IEEE.",
+    "venue": "",
+    "url": "https://doi.org/10.1109/ICCITECHN.2018.8631968",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Medical Imaging",
+      "Clinical Prediction",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C6",
+    "ref": "[C6]",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Dey, S. K., Bappy, M. S. I., Biswas, M. S., & Akter, S",
+    "title": "A comparative usability experience analysis of card sorting and interactive dialogue model design technique",
+    "venue": "In 2018 International Conference on Innovations in Science, Engineering and Technology (ICISET) (pp. 268-273). IEEE",
+    "url": "https://doi.org/10.1109/ICISET.2018.8745596",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "HCI & Education"
+    ]
+  },
+  {
+    "id": "C5",
+    "ref": "[C5]",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Dey, S. K., & Rahman, M. M",
+    "title": "Flow based anomaly detection in software defined networking: A deep learning approach with feature selection method. In 2018 4th international conference on electrical engineering and information & communication technology (iCEEiCT) (pp. 630-635). IEEE.",
+    "venue": "",
+    "url": "https://doi.org/10.1109/CEEICT.2018.8628069",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C4",
+    "ref": "[C4]",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Dey, S. K., Rahman, M. M., & Uddin, M. R",
+    "title": "Detection of flow based anomaly in openflow controller: Machine learning approach in software defined networking",
+    "venue": "In 2018 4th International Conference on Electrical Engineering and Information & Communication Technology (iCEEiCT) (pp. 416-421). IEEE",
+    "url": "https://doi.org/10.1109/CEEICT.2018.8628105",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C3",
+    "ref": "[C3]",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Dey, S. K., Uddin, M. R., Kabir, K. M., & Rahman, M. M",
+    "title": "Enhancing the security of cloud computing: Genetic algorithm and QR code approach",
+    "venue": "In 2017 4th International Conference on Advances in Electrical Engineering (ICAEE) (pp. 181-186). IEEE",
+    "url": "https://doi.org/10.1109/ICAEE.2017.8255350",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Security & Networks"
+    ]
+  },
+  {
+    "id": "C2",
+    "ref": "[C2]",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Dey, S. K., Tariq, S. S. M., Islam, M. S., & Bashir, G. M. M",
+    "title": "Cognitive complexity: A model for distributing equivalent programming problems",
+    "venue": "In 2017 International Conference on Electrical, Computer and Communication Engineering (ECCE) (pp. 831-837). IEEE",
+    "url": "https://doi.org/10.1109/ECACE.2017.7913018",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "C1",
+    "ref": "[C1]",
+    "type": "conference",
+    "year": 2014,
+    "authors": "Bashir, G. M. M., Dey, S. K., Tariq, S. S. M., & Islam, M. S",
+    "title": "Complexity measurement: A new approach to ensure equal distribution of programming problems for evaluation",
+    "venue": "In 8th International Conference on Electrical and Computer Engineering (pp. 780-783). IEEE",
+    "url": "https://doi.org/10.1109/ICECE.2014.7026848",
+    "publisher": "IEEE",
+    "featured": false,
+    "image": "",
+    "tags": [
+      "Machine Learning"
+    ]
+  }
+]

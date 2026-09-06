@@ -1,0 +1,47 @@
+[
+  {
+    "id": "tr05",
+    "title": "Short Course on Cyber Security for the Information Age: Practices and Challenges",
+    "org": "Department of CSE, Islamic University of Technology (IUT)",
+    "location": "Gazipur, Bangladesh",
+    "period": "22–24 July 2022",
+    "year": "2022",
+    "url": ""
+  },
+  {
+    "id": "tr04",
+    "title": "Certificate Course in e-Learning and Teaching (CeLT)",
+    "org": "Foundation for Learning Teaching and Research (FLTR)",
+    "location": "Dhaka, Bangladesh",
+    "period": "10–25 March 2022",
+    "year": "2022",
+    "url": ""
+  },
+  {
+    "id": "tr03",
+    "title": "Advanced Data Analysis Using Industry Accepted and Widely Popular Statistical Package",
+    "org": "Asi@Connect / BdREN — Facilitating Distance Learning using Digital Conferencing Facility (fDLuDCf), UGC Bhaban",
+    "location": "Dhaka, Bangladesh",
+    "period": "3 October – 21 November 2020",
+    "year": "2020",
+    "url": ""
+  },
+  {
+    "id": "tr02",
+    "title": "HUAWEI HCIA-Big Data Training Certification",
+    "org": "Cognitel Training Services",
+    "location": "Gurugram, Haryana, India",
+    "period": "28 October – 7 November 2020",
+    "year": "2020",
+    "url": ""
+  },
+  {
+    "id": "tr01",
+    "title": "Short Course on Machine Learning: An Introduction to Artificial Intelligence",
+    "org": "Department of EEE, Islamic University of Technology (IUT)",
+    "location": "Gazipur, Bangladesh",
+    "period": "2–5 December 2019",
+    "year": "2019",
+    "url": ""
+  }
+]

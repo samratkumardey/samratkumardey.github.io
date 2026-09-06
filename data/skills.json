@@ -1,0 +1,41 @@
+{
+  "groups": [
+    {
+      "name": "Programming Languages",
+      "items": [
+        { "label": "Python", "icon": "devicon-python-plain-wordmark" },
+        { "label": "Java", "icon": "devicon-java-plain-wordmark" },
+        { "label": "C#", "icon": "devicon-csharp-plain-wordmark" },
+        { "label": "PHP", "icon": "devicon-php-plain" },
+        { "label": "HTML5 / CSS", "icon": "devicon-html5-plain-wordmark" },
+        { "label": "MySQL", "icon": "devicon-mysql-plain-wordmark" },
+        { "label": "Android", "icon": "devicon-android-plain-wordmark" },
+        { "label": "R", "icon": "devicon-r-original" }
+      ]
+    },
+    {
+      "name": "Frameworks, Libraries & Tools",
+      "items": [
+        { "label": "TensorFlow", "icon": "devicon-tensorflow-original" },
+        { "label": "Keras", "icon": "devicon-keras-original" },
+        { "label": "PyTorch", "icon": "devicon-pytorch-original" },
+        { "label": "scikit-learn", "icon": "devicon-scikitlearn-plain" },
+        { "label": "NumPy", "icon": "devicon-numpy-original" },
+        { "label": "pandas", "icon": "devicon-pandas-original-wordmark" },
+        { "label": "OpenCV", "icon": "devicon-opencv-plain-wordmark" },
+        { "label": "Jupyter", "icon": "devicon-jupyter-plain-wordmark" },
+        { "label": "MATLAB", "icon": "devicon-matlab-plain" },
+        { "label": "Git", "icon": "devicon-git-plain" }
+      ]
+    }
+  ],
+  "other": [
+    "Tableau",
+    "QGIS",
+    "Plotly, ggplot2, Matplotlib, Seaborn",
+    "Google Colab & high-performance computing clusters",
+    "SPSS / statistical packages",
+    "Survival analysis & causal inference workflows",
+    "Technical writing, peer review and grant preparation"
+  ]
+}

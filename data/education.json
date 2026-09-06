@@ -1,0 +1,49 @@
+[
+  {
+    "id": "edu01",
+    "institution": "University of Missouri-Columbia",
+    "institutionUrl": "https://missouri.edu/",
+    "degree": "PhD in Informatics",
+    "field": "Medical Informatics",
+    "location": "Columbia, Missouri, USA",
+    "period": "August 2025 — Present",
+    "start": "2025-08",
+    "end": "",
+    "dissertation": "",
+    "advisor": "Prof. Dr. Chi-Ren Shyu",
+    "advisorUrl": "https://engineering.missouri.edu/faculty/chi-ren-shyu/",
+    "current": true
+  },
+  {
+    "id": "edu02",
+    "institution": "Military Institute of Science and Technology (MIST), BUP",
+    "institutionUrl": "https://mist.ac.bd/",
+    "degree": "Master of Science in Computer Science and Engineering",
+    "field": "Computer Science and Engineering",
+    "location": "Dhaka, Bangladesh",
+    "period": "April 2016 — February 2019",
+    "start": "2016-04",
+    "end": "2019-02",
+    "dissertation": "Flow Based Anomaly Detection In Software Defined Networking: A Deep Learning Approach With Feature Selection Method",
+    "dissertationUrl": "https://dspace.mist.ac.bd/xmlui/handle/123456789/394",
+    "advisor": "Prof. Dr. Md. Mahbubur Rahman",
+    "advisorUrl": "https://mist.ac.bd/department/cse/facultyMembers/dr_md_mahbubur_rahman-2",
+    "current": false
+  },
+  {
+    "id": "edu03",
+    "institution": "Patuakhali Science and Technology University (PSTU)",
+    "institutionUrl": "https://pstu.ac.bd/",
+    "degree": "Bachelor of Science in Computer Science and Engineering",
+    "field": "Computer Science and Engineering",
+    "location": "Patuakhali, Bangladesh",
+    "period": "December 2010 — May 2015",
+    "start": "2010-12",
+    "end": "2015-05",
+    "dissertation": "Complexity Measurement: A New Measure to Ensure Equal Distribution of Programming Problems",
+    "dissertationUrl": "",
+    "advisor": "Prof. Golam Md. Muradul Bashir",
+    "advisorUrl": "",
+    "current": false
+  }
+]
