@@ -1,46 +1,109 @@
 [
   {
-    "id": "tr05",
-    "title": "Short Course on Cyber Security for the Information Age: Practices and Challenges",
-    "org": "Department of CSE, Islamic University of Technology (IUT)",
-    "location": "Gazipur, Bangladesh",
-    "period": "22–24 July 2022",
-    "year": "2022",
+    "id": "tr01",
+    "title": "8-Week IBM SkillsBuild AI Experiential Learning Lab",
+    "org": "Enterprise-ready AI (Technical) Track, IBM",
+    "location": "Online",
+    "period": "19 September – 1 December 2025",
+    "year": "2025",
     "url": ""
   },
   {
-    "id": "tr04",
-    "title": "Certificate Course in e-Learning and Teaching (CeLT)",
-    "org": "Foundation for Learning Teaching and Research (FLTR)",
-    "location": "Dhaka, Bangladesh",
-    "period": "10–25 March 2022",
-    "year": "2022",
+    "id": "tr02",
+    "title": "14-Day Training on Continuous Professional Development",
+    "org": "College Education Development Project (CEDP), Ministry of Education",
+    "location": "Bangladesh",
+    "period": "26 June – 9 July 2024",
+    "year": "2024",
     "url": ""
   },
   {
     "id": "tr03",
-    "title": "Advanced Data Analysis Using Industry Accepted and Widely Popular Statistical Package",
-    "org": "Asi@Connect / BdREN — Facilitating Distance Learning using Digital Conferencing Facility (fDLuDCf), UGC Bhaban",
+    "title": "5-Day Workshop on AI in Public Health",
+    "org": "Child Health Research Foundation (CHRF), with the Bill & Melinda Gates Foundation",
+    "location": "Dhaka, Bangladesh",
+    "period": "17 May – 1 June 2024",
+    "year": "2024",
+    "url": ""
+  },
+  {
+    "id": "tr04",
+    "title": "Faculty Development on OER-based Blended Learning",
+    "org": "Commonwealth Educational Media Centre for Asia (CEMCA) and BOU",
+    "location": "Gazipur, Bangladesh",
+    "period": "17 – 19 December 2023",
+    "year": "2023",
+    "url": ""
+  },
+  {
+    "id": "tr05",
+    "title": "Training Program on D-Filing",
+    "org": "University Grants Commission and Bangladesh Open University",
+    "location": "Gazipur, Bangladesh",
+    "period": "1 – 3 August 2023",
+    "year": "2023",
+    "url": ""
+  },
+  {
+    "id": "tr06",
+    "title": "Certificate Course on the Application of SPSS",
+    "org": "Institutional Quality Assurance Cell (IQAC), Bangladesh Open University",
+    "location": "Gazipur, Bangladesh",
+    "period": "17 October – 14 November 2022",
+    "year": "2022",
+    "url": ""
+  },
+  {
+    "id": "tr07",
+    "title": "Short Course on Cyber Security for the Information Age: Practices and Challenges",
+    "org": "Department of CSE, Islamic University of Technology (IUT)",
+    "location": "Gazipur, Bangladesh",
+    "period": "22 – 25 July 2022",
+    "year": "2022",
+    "url": ""
+  },
+  {
+    "id": "tr08",
+    "title": "Certificate Course in e-Learning and Teaching (CeLT)",
+    "org": "Foundation for Learning Teaching and Research (FLTR)",
+    "location": "Dhaka, Bangladesh",
+    "period": "10 – 25 March 2022",
+    "year": "2022",
+    "url": ""
+  },
+  {
+    "id": "tr09",
+    "title": "Advanced Data Analysis Using Industry-Accepted Statistical Packages",
+    "org": "Asi@Connect / BdREN — Facilitating Distance Learning using Digital Conferencing Facility",
     "location": "Dhaka, Bangladesh",
     "period": "3 October – 21 November 2020",
     "year": "2020",
     "url": ""
   },
   {
-    "id": "tr02",
-    "title": "HUAWEI HCIA-Big Data Training Certification",
+    "id": "tr10",
+    "title": "Huawei HCIA-Big Data Training Certification",
     "org": "Cognitel Training Services",
-    "location": "Gurugram, Haryana, India",
+    "location": "Haryana, India",
     "period": "28 October – 7 November 2020",
     "year": "2020",
     "url": ""
   },
   {
-    "id": "tr01",
+    "id": "tr11",
     "title": "Short Course on Machine Learning: An Introduction to Artificial Intelligence",
     "org": "Department of EEE, Islamic University of Technology (IUT)",
     "location": "Gazipur, Bangladesh",
-    "period": "2–5 December 2019",
+    "period": "2 – 5 December 2019",
+    "year": "2019",
+    "url": ""
+  },
+  {
+    "id": "tr12",
+    "title": "ACM SIGCHI Summer School — Research Methods in HCI",
+    "org": "North South University — Building Future Bangladesh's HCI Professionals",
+    "location": "Dhaka, Bangladesh",
+    "period": "20 – 23 March 2019",
     "year": "2019",
     "url": ""
   }

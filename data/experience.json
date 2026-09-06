@@ -14,6 +14,20 @@
     "highlights": []
   },
   {
+    "id": "exp01b",
+    "role": "Graduate Teaching Assistant",
+    "org": "MU Institute for Data Science and Informatics",
+    "org2": "University of Missouri-Columbia",
+    "orgUrl": "https://muidsi.missouri.edu/",
+    "location": "Columbia, Missouri, USA",
+    "start": "2026-08",
+    "end": "",
+    "period": "1 August 2026 — Present",
+    "current": true,
+    "summary": "Teaching support for graduate informatics coursework alongside doctoral research.",
+    "highlights": []
+  },
+  {
     "id": "exp02",
     "role": "Assistant Professor on Study Leave (Computer Science)",
     "org": "School of Science and Technology (SST)",

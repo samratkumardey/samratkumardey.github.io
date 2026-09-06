@@ -161,6 +161,27 @@ The site reads whatever is there. You are never locked in.
 
 ---
 
+## 3a. Two citation numbers, and why they differ
+
+The site shows **two** sets of figures on purpose:
+
+| Where | Source | How it updates |
+|---|---|---|
+| Stats strip (headline) | **Google Scholar** | By hand — Admin → Site & profile → `profile` → `scholarStats` |
+| "Citation record" section + per-paper badges | **OpenAlex** | Automatically, nightly |
+
+Google Scholar reports a higher total (2,797 vs ~2,000). That is expected, not a bug. Scholar
+indexes preprints, arXiv and medRxiv versions, theses, book citations and regional venues that
+OpenAlex does not, and it merges versions of the same paper. OpenAlex is stricter, so its number
+is lower but every citation is traceable to an indexed record — which is what makes the
+per-paper badges and the per-year chart trustworthy.
+
+Scholar has **no public API**, and scraping it violates their terms and breaks constantly. So
+those three numbers are typed in and dated. Update them a couple of times a year: open your
+Scholar profile, read the three figures off the right-hand panel, and paste them into
+`scholarStats` with today's date in `asOf`. If you clear `scholarStats.citations`, the strip
+falls back to the live OpenAlex numbers automatically.
+
 ## 3b. Live citation metrics
 
 The stats strip, the "Citation record" section and the citation badge on every publication are

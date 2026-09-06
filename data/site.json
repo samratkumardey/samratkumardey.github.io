@@ -17,7 +17,7 @@
     "name": "Samrat Kumar Dey",
     "shortName": "Samrat",
     "surname": "Dey",
-    "tagline": "Teaching professional · Researcher · Explorer",
+    "tagline": "Teaching Professional · Researcher · Academic Editor · Reviewer",
     "headline": "PhD Researcher in Medical Informatics",
     "role": "Graduate Research Assistant",
     "lab": "Interdisciplinary Data Analytics and Search (iDAS) Lab",
@@ -26,7 +26,7 @@
     "advisor": "Prof. Dr. Chi-Ren Shyu",
     "advisorUrl": "https://engineering.missouri.edu/faculty/chi-ren-shyu/",
     "photo": "assets/img/profile.jpg",
-    "cvUrl": "",
+    "cvUrl": "assets/CV_SamratKumarDey.pdf",
     "quote": "It's hard to beat a person who never gives up.",
     "quoteAuthor": "Babe Ruth",
     "quoteAuthorUrl": "https://baberuth.com/",
@@ -36,13 +36,44 @@
       "I strongly resonate with the words of the famous American baseball player Babe Ruth, who said, \"It's hard to beat a person who never gives up.\""
     ],
     "interests": [
-      { "title": "Machine Learning for Healthcare", "icon": "activity", "description": "Predictive and diagnostic models built on clinical, imaging and signal data." },
-      { "title": "Artificial Intelligence in Healthcare", "icon": "cpu", "description": "Trustworthy, evaluable AI systems designed for real clinical workflows." },
-      { "title": "Healthcare Informatics", "icon": "database", "description": "EHR data quality, standards, and the plumbing that makes clinical research possible." },
-      { "title": "Data Analytics & Visualization", "icon": "chart", "description": "Exploratory analysis and visual storytelling for epidemiology and public health." },
-      { "title": "Agentic AI", "icon": "bot", "description": "LLM-driven agents for research workflows, literature synthesis and study design." },
-      { "title": "Causal & Survival Modeling", "icon": "branch", "description": "Target trial emulation, time-to-event analysis and causal inference on observational data." }
-    ]
+      {
+        "title": "Machine Learning for Healthcare",
+        "icon": "activity",
+        "description": "Predictive and diagnostic models built on clinical, imaging and signal data."
+      },
+      {
+        "title": "Artificial Intelligence in Healthcare",
+        "icon": "cpu",
+        "description": "Trustworthy, evaluable AI systems designed for real clinical workflows."
+      },
+      {
+        "title": "Healthcare Informatics",
+        "icon": "database",
+        "description": "EHR data quality, standards, and the plumbing that makes clinical research possible."
+      },
+      {
+        "title": "Data Analytics & Visualization",
+        "icon": "chart",
+        "description": "Exploratory analysis and visual storytelling for epidemiology and public health."
+      },
+      {
+        "title": "Agentic AI",
+        "icon": "bot",
+        "description": "LLM-driven agents for research workflows, literature synthesis and study design."
+      },
+      {
+        "title": "Causal & Survival Modeling",
+        "icon": "branch",
+        "description": "Target trial emulation, time-to-event analysis and causal inference on observational data."
+      }
+    ],
+    "scholarStats": {
+      "citations": 2797,
+      "hIndex": 26,
+      "i10Index": 40,
+      "asOf": "2026-09-06",
+      "profileUrl": "https://scholar.google.com/citations?user=tqdPfj8AAAAJ&hl=en"
+    }
   },
   "contact": {
     "email": "sdey@missouri.edu",
@@ -59,39 +90,136 @@
     "note": "Happy to hear from prospective collaborators, students and anyone working on clinical AI. Email is the fastest way to reach me."
   },
   "social": [
-    { "label": "Email", "icon": "mail", "url": "mailto:sdey@missouri.edu" },
-    { "label": "Google Scholar", "icon": "scholar", "url": "https://scholar.google.com/citations?user=tqdPfj8AAAAJ&hl=en" },
-    { "label": "GitHub", "icon": "github", "url": "https://github.com/samratkumardey" },
-    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/samrat-kumar-dey-26334251/" },
-    { "label": "X / Twitter", "icon": "twitter", "url": "https://twitter.com/SKDey_Official" },
-    { "label": "ORCID", "icon": "orcid", "url": "" },
-    { "label": "ResearchGate", "icon": "rg", "url": "" },
-    { "label": "Facebook", "icon": "facebook", "url": "https://www.facebook.com/samratkumardey26" },
-    { "label": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/samratkumardey26" }
+    {
+      "label": "Email",
+      "icon": "mail",
+      "url": "mailto:sdey@missouri.edu"
+    },
+    {
+      "label": "Google Scholar",
+      "icon": "scholar",
+      "url": "https://scholar.google.com/citations?user=tqdPfj8AAAAJ&hl=en"
+    },
+    {
+      "label": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/samratkumardey"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/samratkdey/"
+    },
+    {
+      "label": "X / Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com/SKDey_Official"
+    },
+    {
+      "label": "ORCID",
+      "icon": "orcid",
+      "url": ""
+    },
+    {
+      "label": "ResearchGate",
+      "icon": "rg",
+      "url": ""
+    },
+    {
+      "label": "Facebook",
+      "icon": "facebook",
+      "url": "https://www.facebook.com/samratkumardey26"
+    },
+    {
+      "label": "Instagram",
+      "icon": "instagram",
+      "url": "https://www.instagram.com/samratkumardey26"
+    }
   ],
   "affiliationLinks": [
-    { "label": "MU Institute for Data Science and Informatics", "url": "https://muidsi.missouri.edu/" },
-    { "label": "University of Missouri", "url": "https://missouri.edu/" },
-    { "label": "Bangladesh Open University — Faculty Profile", "url": "https://bou.ac.bd/SSTFacultyMember/199111251521" },
-    { "label": "Dhaka International University — Profile", "url": "https://profile.diu.ac/samrat.kumar.dey" },
-    { "label": "PSTU — Alumni Profile", "url": "https://pstu.ac.bd/user-profile/260" }
+    {
+      "label": "MU Institute for Data Science and Informatics",
+      "url": "https://muidsi.missouri.edu/"
+    },
+    {
+      "label": "University of Missouri",
+      "url": "https://missouri.edu/"
+    },
+    {
+      "label": "Bangladesh Open University — Faculty Profile",
+      "url": "https://bou.ac.bd/SSTFacultyMember/199111251521"
+    },
+    {
+      "label": "Dhaka International University — Profile",
+      "url": "https://profile.diu.ac/samrat.kumar.dey"
+    },
+    {
+      "label": "PSTU — Alumni Profile",
+      "url": "https://pstu.ac.bd/user-profile/260"
+    }
   ],
   "nav": [
-    { "label": "Home", "href": "index.html" },
-    { "label": "Research", "href": "research.html" },
-    { "label": "Publications", "href": "publications.html" },
-    { "label": "News", "href": "news.html" },
-    { "label": "Talks", "href": "talks.html" },
-    { "label": "Teaching", "href": "teaching.html" },
-    { "label": "Awards", "href": "awards.html" },
-    { "label": "Gallery", "href": "gallery.html" },
-    { "label": "CV", "href": "cv.html" },
-    { "label": "Contact", "href": "contact.html" }
+    {
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "label": "Research",
+      "href": "research.html"
+    },
+    {
+      "label": "Publications",
+      "href": "publications.html"
+    },
+    {
+      "label": "News",
+      "href": "news.html"
+    },
+    {
+      "label": "Talks",
+      "href": "talks.html"
+    },
+    {
+      "label": "Teaching",
+      "href": "teaching.html"
+    },
+    {
+      "label": "Awards",
+      "href": "awards.html"
+    },
+    {
+      "label": "Gallery",
+      "href": "gallery.html"
+    },
+    {
+      "label": "CV",
+      "href": "cv.html"
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html"
+    }
   ],
   "stats": [
-    { "label": "Peer-reviewed publications", "value": 52, "suffix": "" },
-    { "label": "Journal articles", "value": 25, "suffix": "" },
-    { "label": "Funded grants & projects", "value": 7, "suffix": "" },
-    { "label": "Years teaching", "value": 10, "suffix": "+" }
+    {
+      "label": "Peer-reviewed publications",
+      "value": 52,
+      "suffix": ""
+    },
+    {
+      "label": "Journal articles",
+      "value": 25,
+      "suffix": ""
+    },
+    {
+      "label": "Funded grants & projects",
+      "value": 7,
+      "suffix": ""
+    },
+    {
+      "label": "Years teaching",
+      "value": 10,
+      "suffix": "+"
+    }
   ]
 }

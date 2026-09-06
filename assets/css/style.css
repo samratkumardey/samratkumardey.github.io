@@ -6,31 +6,33 @@
 
 /* ---------- 1. Tokens ---------- */
 :root {
-  /* Palette — light (default) */
-  --bg:              #fbfaf8;
-  --bg-soft:         #f3f1ed;
+  /* Palette — light (default).
+     Deep crimson on warm paper: the classic academic pairing. Dark mode keeps
+     a blue accent, which reads better on a near-black ground than red does. */
+  --bg:              #fcfaf8;
+  --bg-soft:         #f4f0ec;
   --surface:         #ffffff;
-  --surface-2:       #f7f6f3;
-  --border:          #e3e0da;
-  --border-strong:   #cfcbc2;
-  --ink:             #16191d;
-  --ink-2:           #3d444d;
-  --ink-3:           #6b7280;
-  --accent:          #1c4f8a;
-  --accent-soft:     #e8effa;
-  --accent-ink:      #14406f;
-  --gold:            #b8860b;
-  --gold-soft:       #fbf3df;
+  --surface-2:       #f8f5f2;
+  --border:          #e6e0d9;
+  --border-strong:   #d0c7bd;
+  --ink:             #1a1614;
+  --ink-2:           #453f3b;
+  --ink-3:           #736a64;
+  --accent:          #9e1b32;   /* deep crimson */
+  --accent-soft:     #fbecee;
+  --accent-ink:      #781224;
+  --gold:            #8a6a1f;
+  --gold-soft:       #f8f0dc;
   --danger:          #a8332a;
   --success:         #1f6f4a;
-  --shadow-sm:       0 1px 2px rgba(20, 24, 30, .06), 0 1px 3px rgba(20, 24, 30, .05);
-  --shadow-md:       0 2px 6px rgba(20, 24, 30, .06), 0 8px 24px rgba(20, 24, 30, .07);
-  --shadow-lg:       0 4px 12px rgba(20, 24, 30, .08), 0 18px 48px rgba(20, 24, 30, .10);
+  --shadow-sm:       0 1px 2px rgba(40, 24, 24, .05), 0 1px 3px rgba(40, 24, 24, .05);
+  --shadow-md:       0 2px 6px rgba(40, 24, 24, .06), 0 8px 24px rgba(40, 24, 24, .07);
+  --shadow-lg:       0 4px 12px rgba(40, 24, 24, .08), 0 18px 48px rgba(40, 24, 24, .10);
 
-  /* Type */
-  --font-serif: "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
+  /* Type — Source Serif 4 for display, Inter for text, IBM Plex Mono for refs */
+  --font-serif: "Source Serif 4", "Newsreader", Georgia, "Times New Roman", serif;
   --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Metrics */
   --wrap: 1140px;
@@ -40,6 +42,11 @@
   --radius-lg: 20px;
   --header-h: 66px;
   --ticker-h: 40px;
+
+  /* Motion — one easing curve for the whole site */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --ease-soft: cubic-bezier(.4, 0, .2, 1);
+  --dur: .22s;
 }
 
 html[data-theme="dark"] {
@@ -88,6 +95,34 @@ html[data-theme="dark"] {
   }
 }
 
+/* ---------- 1b. Motion: cross-page transitions ---------- */
+/* Chromium browsers cross-fade between pages natively via the View Transitions
+   API. The header and ticker are given stable names so the chrome stays put
+   while only the content changes — that is what stops navigation feeling like
+   a hard reload. Browsers without support simply navigate as before, plus the
+   fade-in below. */
+@view-transition { navigation: auto; }
+
+::view-transition-old(page) {
+  animation: vt-out .16s var(--ease-soft) both;
+}
+::view-transition-new(page) {
+  animation: vt-in .34s var(--ease) both;
+}
+@keyframes vt-out { to { opacity: 0; transform: translateY(-6px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(10px); } }
+
+/* Fade the first paint in, for browsers with no view transitions. */
+@supports not (view-transition-name: none) {
+  body { animation: page-in .42s var(--ease) both; }
+  @keyframes page-in { from { opacity: 0; transform: translateY(6px); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  ::view-transition-old(page), ::view-transition-new(page) { animation: none; }
+}
+
 /* ---------- 2. Reset & base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -129,6 +164,7 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 img { max-width: 100%; height: auto; display: block; }
+figure { margin: 0; }   /* the UA default is 1em 40px — it was shrinking the portrait */
 ul, ol { margin: 0 0 1.1em; padding-left: 1.25em; }
 li { margin-bottom: .35em; }
 hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
@@ -190,7 +226,11 @@ code, kbd { font-family: var(--font-mono); font-size: .88em; background: var(--s
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--border);
+  view-transition-name: site-header;   /* held still across navigations */
 }
+.ticker { view-transition-name: site-ticker; }
+main { view-transition-name: page; }   /* only this crossfades */
+.site-footer { view-transition-name: site-footer; }
 .site-header__inner {
   height: var(--header-h);
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -210,11 +250,28 @@ code, kbd { font-family: var(--font-mono); font-size: .88em; background: var(--s
 
 .nav { display: flex; align-items: center; gap: .1rem; }
 .nav a {
-  padding: .45rem .68rem; border-radius: 8px; font-size: .89rem; font-weight: 520;
-  color: var(--ink-2); white-space: nowrap;
+  position: relative; padding: .45rem .68rem; border-radius: 8px;
+  font-size: .89rem; font-weight: 520; color: var(--ink-2); white-space: nowrap;
+  transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
 }
-.nav a:hover { background: var(--surface-2); color: var(--ink); text-decoration: none; }
-.nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); font-weight: 620; }
+/* The pill grows from the centre on hover rather than snapping on. */
+.nav a::before {
+  content: ""; position: absolute; inset: 0; border-radius: 8px;
+  background: var(--surface-2); opacity: 0; transform: scale(.82);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  z-index: -1;
+}
+.nav a:hover { color: var(--ink); text-decoration: none; }
+.nav a:hover::before { opacity: 1; transform: none; }
+.nav a[aria-current="page"] { color: var(--accent); font-weight: 620; }
+.nav a[aria-current="page"]::before { background: var(--accent-soft); opacity: 1; transform: none; }
+/* Underline slides in under the active item. */
+.nav a[aria-current="page"]::after {
+  content: ""; position: absolute; left: .68rem; right: .68rem; bottom: -2px;
+  height: 2px; border-radius: 2px; background: var(--accent);
+  animation: nav-underline .38s var(--ease) both;
+}
+@keyframes nav-underline { from { transform: scaleX(0); opacity: 0; } }
 
 .header-actions { display: flex; align-items: center; gap: .4rem; }
 
@@ -385,13 +442,14 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
 }
 .hero > * { position: relative; z-index: 1; }
 .hero__grid {
-  display: grid; gap: clamp(1.75rem, 4vw, 3.5rem);
-  grid-template-columns: minmax(0, 1.55fr) minmax(240px, .85fr);
-  align-items: center;
+  display: grid; gap: clamp(1.75rem, 4vw, 3.25rem);
+  /* Small, fixed headshot — faculty-page proportions, not a hero image. */
+  grid-template-columns: minmax(0, 1fr) 200px;
+  align-items: start;
 }
 @media (max-width: 860px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__portrait { order: -1; max-width: 260px; }
+  .hero__portrait { order: -1; max-width: 160px; }
 }
 .hero h1 { margin-bottom: .3rem; }
 .hero__role { font-size: clamp(1.02rem, .95rem + .4vw, 1.2rem); color: var(--accent);
@@ -401,15 +459,22 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
 .hero__affil a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.5rem; }
 
-.hero__portrait { position: relative; }
+.hero__portrait { position: relative; margin-top: .4rem; }
 .hero__portrait img {
-  width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-  border-radius: var(--radius-lg); border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg);
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 22%;
+  border-radius: 16px; border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
 }
+/* A thin offset rule instead of a heavy frame — quieter at this size.
+   Sized to the square image only, so it does not box in the caption. */
 .hero__portrait::after {
-  content: ""; position: absolute; inset: 14px -14px -14px 14px; z-index: -1;
-  border-radius: var(--radius-lg); border: 1.5px solid var(--accent); opacity: .35;
+  content: ""; position: absolute; top: 10px; left: 10px; right: -10px;
+  aspect-ratio: 1 / 1; z-index: -1;
+  border-radius: 16px; border: 1.5px solid var(--accent); opacity: .3;
+}
+.hero__portrait figcaption {
+  margin-top: .7rem; font-size: .74rem; line-height: 1.45; color: var(--ink-3);
+  text-align: center;
 }
 
 .social-row { display: flex; flex-wrap: wrap; gap: .45rem; }
@@ -426,10 +491,21 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1px; background: var(--border); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden; }
-.stat { background: var(--surface); padding: 1.25rem 1.1rem; text-align: center; }
-.stat__value { font-family: var(--font-serif); font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.35rem);
-  font-weight: 620; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat {
+  background: var(--surface); padding: 1.25rem 1.1rem; text-align: center;
+  transition: background-color var(--dur) var(--ease);
+}
+.stat:hover { background: var(--surface-2); }
+.stat__value {
+  font-family: var(--font-serif); font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.35rem);
+  font-weight: 620; color: var(--accent); line-height: 1;
+  /* tabular figures keep the box from twitching while the count animates */
+  font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1;
+}
 .stat__label { font-size: .79rem; color: var(--ink-3); margin-top: .4rem; letter-spacing: .01em; }
+.stat__sub {
+  display: block; font-size: .68rem; color: var(--ink-3); opacity: .75; margin-top: .2rem;
+}
 
 /* ---------- 9b. Citation metrics ---------- */
 .stat__live {
@@ -524,21 +600,30 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
 .tl-body { margin-top: .5rem; font-size: .91rem; color: var(--ink-3); max-width: 68ch; }
 
 /* ---------- 11. Research highlight cards ---------- */
+/* Fixed 280px figure column on every row. The previous design alternated sides
+   using `order`, which also swapped the track widths — that is why some figures
+   rendered at 300px and others at 800px. Consistency wins here. */
 .research-item {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
-  gap: 1.75rem; align-items: start;
-  padding: 1.6rem 0; border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 2rem; align-items: start;
+  padding: 1.9rem 0; border-bottom: 1px solid var(--border);
 }
 .research-item:last-child { border-bottom: 0; }
-.research-item:nth-child(even) .research-item__media { order: -1; }
 @media (max-width: 780px) {
   .research-item { grid-template-columns: 1fr; gap: 1.1rem; }
-  .research-item .research-item__media,
-  .research-item:nth-child(even) .research-item__media { order: -1; }
+  .research-item .research-item__media { order: -1; max-width: 320px; }
 }
+/* Every figure gets the same box. `contain` (not `cover`) because these are
+   published figures and journal marks — cropping them would destroy meaning. */
 .research-item__media img {
-  width: 100%; border-radius: var(--radius); border: 1px solid var(--border);
-  background: var(--surface-2); box-shadow: var(--shadow-sm);
+  width: 100%; aspect-ratio: 4 / 3; object-fit: contain;
+  padding: .7rem; background: var(--surface);
+  border-radius: var(--radius); border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.research-item:hover .research-item__media img {
+  transform: translateY(-2px); box-shadow: var(--shadow-md);
 }
 .research-item h3 { margin-bottom: .35rem; }
 .research-item h3 a { color: var(--ink); }
@@ -599,6 +684,26 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
 .pub__foot { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-top: .5rem; }
 .pub__year { font-variant-numeric: tabular-nums; }
 .pub-empty { padding: 2.5rem 1rem; text-align: center; color: var(--ink-3); }
+
+/* ---------- 12b. Publication type marks & reviewer lists ---------- */
+.pub__ref {
+  display: flex; flex-direction: column; align-items: center; gap: .2rem;
+  padding: .3rem .1rem;
+}
+.pub__ref svg { width: 14px; height: 14px; opacity: .75; }
+.pub__kind {
+  font-size: .62rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  opacity: .7;
+}
+
+.reviewer-grid { display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.venue-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+.venue-list span {
+  padding: .32rem .7rem; border-radius: 7px; font-size: .82rem;
+  background: var(--surface); border: 1px solid var(--border); color: var(--ink-2);
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.venue-list span:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- 13. News ---------- */
 .news-list { display: grid; gap: 1px; background: var(--border);
@@ -768,8 +873,12 @@ html[data-theme="dark"] .filter-btn.is-active { color: #0d1117; }
 }
 
 /* ---------- 19. Utilities ---------- */
-.reveal { opacity: 0; transform: translateY(14px); }
-.reveal.is-visible { opacity: 1; transform: none; transition: opacity .5s ease, transform .5s ease; }
+.reveal { opacity: 0; transform: translateY(16px); }
+.reveal.is-visible {
+  opacity: 1; transform: none;
+  transition: opacity .55s var(--ease), transform .55s var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal.is-visible { opacity: 1; transform: none; transition: none; }
   * { scroll-behavior: auto !important; }

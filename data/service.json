@@ -1,21 +1,119 @@
 {
   "editorial": [
-    { "role": "Lead Guest Editor", "org": "Special Issue on Data-Driven Decision Making in Healthcare Informatics", "url": "", "period": "" },
-    { "role": "Academic Editor", "org": "PLoS ONE, Public Library of Science", "url": "https://journals.plos.org/plosone/", "period": "" },
-    { "role": "Academic Editor", "org": "Journal of Computational and Mathematical Methods, Wiley", "url": "", "period": "" }
+    {
+      "role": "Lead Guest Editor — Special Issue: Data-Driven Decision Making in Healthcare Informatics",
+      "org": "BioMed Research International, Wiley, United States",
+      "url": "",
+      "period": "Oct 2024 – Present"
+    },
+    {
+      "role": "Academic Editor",
+      "org": "PLoS ONE, Public Library of Science, California, USA",
+      "url": "https://journals.plos.org/plosone/",
+      "period": "Apr 2023 – Dec 2025"
+    },
+    {
+      "role": "Academic Editor",
+      "org": "Journal of Computational and Mathematical Methods, Wiley, London, UK",
+      "url": "",
+      "period": "May 2023 – Dec 2025"
+    }
   ],
   "memberships": [
-    { "role": "Professional Member", "org": "Institute of Electrical and Electronics Engineers (IEEE)", "url": "https://www.ieee.org/", "period": "" },
-    { "role": "Professional Member", "org": "Association for Computing Machinery (ACM)", "url": "https://www.acm.org/", "period": "" },
-    { "role": "Member", "org": "ACM Special Interest Group on Computer-Human Interaction (SIGCHI)", "url": "https://sigchi.org/", "period": "" },
-    { "role": "Member Affairs Secretary", "org": "Bangladesh Data Science Society (BDDSS)", "url": "", "period": "" },
-    { "role": "Associate Member", "org": "Bangladesh Computer Society", "url": "", "period": "" }
+    {
+      "role": "Student Member",
+      "org": "American Medical Informatics Association (AMIA), USA",
+      "url": "https://amia.org/",
+      "period": "Jan 2026 – Present"
+    },
+    {
+      "role": "Professional Member",
+      "org": "Association for Computing Machinery (ACM), USA",
+      "url": "https://www.acm.org/",
+      "period": "Feb 2025 – Present"
+    },
+    {
+      "role": "Student Member",
+      "org": "IEEE St. Louis Section, Missouri, USA",
+      "url": "https://www.ieee.org/",
+      "period": "Jan 2025 – Present"
+    },
+    {
+      "role": "Member",
+      "org": "ACM Special Interest Group on Computer-Human Interaction (SIGCHI)",
+      "url": "https://sigchi.org/",
+      "period": ""
+    },
+    {
+      "role": "Member Affairs Secretary",
+      "org": "Bangladesh Data Science Society (BDDSS)",
+      "url": "",
+      "period": ""
+    },
+    {
+      "role": "Elected Councillor, Management Committee",
+      "org": "Bangladesh Computer Society, Dhaka",
+      "url": "",
+      "period": "Jan 2018 – Jan 2020"
+    }
   ],
   "leadership": [
-    { "role": "Advisor", "org": "Computer Programming Club (CPC), Bangladesh Open University", "url": "", "period": "" },
-    { "role": "Former Faculty Advisor", "org": "CodeChef Chapter, Dhaka International University", "url": "", "period": "" },
-    { "role": "Former Mentor", "org": "BASIS Students Forum, Dhaka International University", "url": "", "period": "" },
-    { "role": "Former Advisor", "org": "Computer Programming Club (CPC), Dhaka International University", "url": "", "period": "" }
+    {
+      "role": "Advisor",
+      "org": "Computer Programming Club, Bangladesh Open University",
+      "url": "",
+      "period": "Sep 2021 – Jul 2025"
+    },
+    {
+      "role": "Former Faculty Advisor",
+      "org": "CodeChef Chapter, Dhaka International University",
+      "url": "",
+      "period": ""
+    },
+    {
+      "role": "Former Mentor",
+      "org": "BASIS Students Forum, Dhaka International University",
+      "url": "",
+      "period": ""
+    },
+    {
+      "role": "Former Advisor",
+      "org": "Computer Programming Club, Dhaka International University",
+      "url": "",
+      "period": ""
+    }
   ],
-  "reviewer": []
+  "reviewer": {
+    "conferences": [
+      "NeurIPS 2026 — WiML and JUDGe Workshops",
+      "ACM ICCA 2026",
+      "MICCAI 2026",
+      "IEEE BHI 2026",
+      "AMIA Amplify Informatics 2025",
+      "IEEE ICHI 2025",
+      "MIET 2026 & 2024",
+      "EICT 2025",
+      "TCCE 2022"
+    ],
+    "journals": [
+      "Applied Artificial Intelligence",
+      "Heliyon",
+      "Informatics in Medicine Unlocked",
+      "Information and Software Technology",
+      "Computers in Biology and Medicine",
+      "BMC Public Health",
+      "Discover Applied Sciences",
+      "Scientific Reports",
+      "Journal of Health, Population and Nutrition",
+      "IEEE MultiMedia",
+      "Biomedical Signal Processing and Control",
+      "Expert Systems with Applications",
+      "BMC Medical Informatics and Decision Making",
+      "Discover Artificial Intelligence",
+      "IEEE Access",
+      "Journal of Medical Virology",
+      "Human Vaccines & Immunotherapeutics",
+      "PLOS Global Public Health"
+    ]
+  }
 }

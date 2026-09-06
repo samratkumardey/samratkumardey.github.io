@@ -1,8 +1,68 @@
 [
   {
     "id": "aw01",
-    "title": "Nominated to India Science and Research Fellowship 2024-25",
-    "org": "Bangladesh Academy of Science (BAS)",
+    "title": "Mizzou GPC Travel Award (Spring 2026)",
+    "org": "Graduate Professional Council, University of Missouri — for the 14th IEEE ICHI, University of Minnesota, USA",
+    "year": "2026",
+    "url": "",
+    "image": "",
+    "featured": true,
+    "description": ""
+  },
+  {
+    "id": "aw02",
+    "title": "Winner — 2nd Place, MU IDSI Hackathon 2026",
+    "org": "MU Institute for Data Science and Informatics, University of Missouri, USA",
+    "year": "2026",
+    "url": "",
+    "image": "",
+    "featured": true,
+    "description": ""
+  },
+  {
+    "id": "aw03",
+    "title": "Graduate Student of the Week (Spring 2026)",
+    "org": "Mizzou Graduate Professional Council, University of Missouri, USA",
+    "year": "2026",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw04",
+    "title": "Winner — 1st Place, AGI ARC Mizzou Hackathon 2025",
+    "org": "University of Missouri, USA",
+    "year": "2025",
+    "url": "",
+    "image": "",
+    "featured": true,
+    "description": ""
+  },
+  {
+    "id": "aw05",
+    "title": "2nd Place & Public Choice Award, GPC RCAF Poster Competition 2025",
+    "org": "Graduate Professional Council, University of Missouri, USA",
+    "year": "2025",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw06",
+    "title": "Best BioTech Poster Award",
+    "org": "Bangladesh National Semiconductor Symposium 2025, Dhaka, Bangladesh",
+    "year": "2025",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw07",
+    "title": "Nominated to the India Science and Research Fellowship 2024–25",
+    "org": "Bangladesh Academy of Sciences (BAS)",
     "year": "2024",
     "url": "https://drive.google.com/file/d/1iZKkhd6hxcoSzFL85jrjZ7Rf-5WYAo9Z/view?usp=sharing",
     "image": "",
@@ -10,9 +70,9 @@
     "description": ""
   },
   {
-    "id": "aw02",
+    "id": "aw08",
     "title": "AI for Good — Innovate for Impact Award",
-    "org": "AI for Good Global Summit, ITU, WAIC 2024",
+    "org": "AI for Good Global Summit, ITU, WAIC 2024, Shanghai, China",
     "year": "2024",
     "url": "https://drive.google.com/file/d/1ctnT5SsCT5IIxORG29LLjSl5EmC5K7Sg/view?usp=sharing",
     "image": "",
@@ -20,19 +80,9 @@
     "description": ""
   },
   {
-    "id": "aw03",
-    "title": "Most Accurate Deep Model Creator",
-    "org": "AI in Public Health Workshop 2024",
-    "year": "2024",
-    "url": "https://chrfbd.org/blogs/1d9693bf-20ce-419f-92d4-0ed018482e19",
-    "image": "",
-    "featured": true,
-    "description": ""
-  },
-  {
-    "id": "aw04",
-    "title": "Group Lead, Innovation Fair Award 2024",
-    "org": "BOU Innovation Unit",
+    "id": "aw09",
+    "title": "Winner — 1st Place, Innovation Fair 2024",
+    "org": "BOU Innovation Unit, Gazipur, Bangladesh",
     "year": "2024",
     "url": "https://drive.google.com/file/d/1tYSB6I9_bXtSaONaeDhfsRAfZgJHe-YY/view?usp=sharing",
     "image": "",
@@ -40,29 +90,39 @@
     "description": ""
   },
   {
-    "id": "aw05",
-    "title": "Judge, Bangladesh Robot Olympiad",
-    "org": "Bangladesh Robot Olympiad — 2024, 2023, 2022, 2021",
-    "year": "2021-2024",
+    "id": "aw10",
+    "title": "Most Accurate Deep Model Creator",
+    "org": "AI in Public Health Workshop 2024, Child Health Research Foundation",
+    "year": "2024",
+    "url": "https://chrfbd.org/blogs/1d9693bf-20ce-419f-92d4-0ed018482e19",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw11",
+    "title": "Judge, 4th–6th Bangladesh Robotics Olympiad",
+    "org": "Bangladesh Robot Olympiad, Dhaka — 2021, 2022, 2023",
+    "year": "2021–2023",
     "url": "https://drive.google.com/file/d/1PKp0zskSzkm1x1k0-QD-ky8qg-Ayn4pp/view?usp=sharing",
     "image": "",
     "featured": false,
     "description": ""
   },
   {
-    "id": "aw06",
-    "title": "Regional Judge & Mentor, NASA Space Apps Challenge",
-    "org": "NASA Space Apps Challenge — 2023, 2022, 2021, 2020",
-    "year": "2020-2023",
+    "id": "aw12",
+    "title": "Judge & Mentor, NASA International Space Apps Challenge",
+    "org": "NASA Space Apps Challenge, Dhaka — 2021, 2022, 2023",
+    "year": "2021–2023",
     "url": "https://drive.google.com/file/d/1K56o3v7jmGmRYBgs2aiUIy9-qQv97kUD/view?usp=sharing",
     "image": "",
     "featured": true,
     "description": ""
   },
   {
-    "id": "aw07",
+    "id": "aw13",
     "title": "Judge, BASIS National ICT Award 2022",
-    "org": "Bangladesh Association of Software and Information Services (BASIS)",
+    "org": "Bangladesh Association of Software and Information Services, Dhaka",
     "year": "2022",
     "url": "https://drive.google.com/file/d/1ZBo8-Puq-vlRI37I-q4wvUcySOPV-onW/view?usp=sharing",
     "image": "",
@@ -70,9 +130,9 @@
     "description": ""
   },
   {
-    "id": "aw08",
-    "title": "Final Round Judge, BDApps National Hackathon 2022",
-    "org": "BDApps",
+    "id": "aw14",
+    "title": "Judge — Final Round, Robi BDApps National Hackathon 2022",
+    "org": "BDApps, Dhaka, Bangladesh",
     "year": "2022",
     "url": "https://drive.google.com/file/d/10OUCP0i-WYXYtxf_ct0CKqgaw1zAuZ4E/view?usp=sharing",
     "image": "",
@@ -80,7 +140,17 @@
     "description": ""
   },
   {
-    "id": "aw09",
+    "id": "aw15",
+    "title": "Judge & Mentor, CTO Forum Innovation Hackathon 2022",
+    "org": "CTO Forum, Dhaka, Bangladesh",
+    "year": "2022",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw16",
     "title": "Convener, Mujib Borsho IT Carnival 2020",
     "org": "ICT Division, Government of the People's Republic of Bangladesh",
     "year": "2020",
@@ -90,20 +160,50 @@
     "description": ""
   },
   {
-    "id": "aw10",
+    "id": "aw17",
     "title": "Best Project Supervisor Award",
-    "org": "Department of CSE, Dhaka International University",
-    "year": "",
+    "org": "Department of CSE, Dhaka International University, Dhaka, Bangladesh",
+    "year": "2019",
     "url": "https://drive.google.com/file/d/1ROedsaTHKB-W5o8etpp7hnbaNf1Tcezs/view?usp=sharing",
     "image": "",
     "featured": false,
     "description": ""
   },
   {
-    "id": "aw11",
-    "title": "Best Mobile App Developer Award",
-    "org": "National Mobile Application Awareness Development and Training Program 2015",
+    "id": "aw18",
+    "title": "Mentor of the Champion Team, ESONANCE 2018",
+    "org": "Hosted by Islamic University of Technology, Gazipur, Bangladesh",
+    "year": "2018",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw19",
+    "title": "Coach, 2017 ICPC Asia Dhaka Regional",
+    "org": "Hosted by University of Asia Pacific, Dhaka, Bangladesh",
+    "year": "2017",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw20",
+    "title": "Coach, 2015 ICPC Asia Dhaka Regional",
+    "org": "Hosted by North South University, Dhaka, Bangladesh",
     "year": "2015",
+    "url": "",
+    "image": "",
+    "featured": false,
+    "description": ""
+  },
+  {
+    "id": "aw21",
+    "title": "Winner — 1st Place, National Mobile Application Awareness, Development and Training Program",
+    "org": "ICT Division & EATL, Bangladesh",
+    "year": "2014",
     "url": "https://drive.google.com/file/d/1hbtR13CMTtx8SxBBPWepBsNi-Zql8qUZ/view?usp=sharing",
     "image": "",
     "featured": false,

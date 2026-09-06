@@ -62,6 +62,12 @@
     database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/>',
     chart: '<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',
     quote: '<path d="M9 7H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"/><path d="M19 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v1a3 3 0 0 1-3 3"/>',
+    // academic marks — one per publication type, plus a PDF mark
+    journal: '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 7h8M8 11h8M8 15h5"/>',
+    chapter: '<path d="M12 6.5C10.5 5 8.5 4.5 6 4.5H3v14h3c2.5 0 4.5.5 6 2 1.5-1.5 3.5-2 6-2h3v-14h-3c-2.5 0-4.5.5-6 2z"/><path d="M12 6.5v14"/>',
+    podium: '<path d="M8 21h8M12 14v7"/><rect x="4" y="3" width="16" height="11" rx="2"/><path d="M9 8h6"/>',
+    pdf: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h1.5a1.5 1.5 0 0 0 0-3H9v5M15 12h-2v5M13 14.5h1.7"/>',
+    doi: '<circle cx="12" cy="12" r="9"/><path d="M8 9v6M8 7.4v.1M12 10h1.6a3 3 0 0 1 0 6H12z"/>',
     bot: '<rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 8V4M8 2h8"/><circle cx="8.5" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="1.2" fill="currentColor" stroke="none"/>',
     branch: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6M18 12c0 4-6 2-6 6"/>',
     book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
@@ -352,35 +358,98 @@
             '<a class="btn btn--ghost" href="' + BASE + 'research.html">' +
               icon('activity') + 'Research</a>' +
             '<a class="btn btn--ghost" href="' + BASE + 'cv.html">' + icon('file') + 'CV</a>' +
+            (p.cvUrl ? '<a class="btn btn--ghost" href="' + esc(BASE + p.cvUrl) + '" ' +
+              'target="_blank" rel="noopener">' + icon('pdf') + 'CV (PDF)</a>' : '') +
             '<a class="btn btn--ghost" href="mailto:' + esc(c.email) + '">' +
               icon('mail') + 'Email</a>' +
           '</div>' +
           '<div class="social-row">' + social + '</div>' +
         '</div>' +
-        '<div class="hero__portrait">' +
+        '<figure class="hero__portrait">' +
           '<img src="' + esc(BASE + p.photo) + '" alt="Portrait of ' + esc(p.name) + '" ' +
-            'width="640" height="800" fetchpriority="high">' +
-        '</div>' +
+            'width="400" height="400" fetchpriority="high">' +
+          '<figcaption>' + esc(p.role) + '<br>' + esc(p.institution) + '</figcaption>' +
+        '</figure>' +
       '</div>';
   };
 
   const nfmt = (n) => Number(n || 0).toLocaleString('en-US');
 
+  /**
+   * Count a number up when it first scrolls into view.
+   * Skipped entirely under prefers-reduced-motion.
+   */
+  function animateCount(el, target, suffix) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !target || target < 2) {
+      el.textContent = nfmt(target) + (suffix || '');
+      return;
+    }
+    const dur = target > 500 ? 1500 : target > 60 ? 1150 : 850;
+    let t0 = null;
+    const step = (ts) => {
+      if (t0 === null) t0 = ts;
+      const p = Math.min(1, (ts - t0) / dur);
+      // easeOutExpo: fast start, long settle — reads as "counting up", not sliding
+      const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+      el.textContent = nfmt(Math.round(target * eased)) + (suffix || '');
+      if (p < 1) requestAnimationFrame(step);
+    };
+    el.textContent = '0' + (suffix || '');
+    requestAnimationFrame(step);
+  }
+
+  function wireCounters(root) {
+    const nodes = $$('[data-count]', root);
+    if (!nodes.length) return;
+    const run = (n) => animateCount(n, Number(n.dataset.count), n.dataset.suffix || '');
+    if (!('IntersectionObserver' in window)) { nodes.forEach(run); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        run(e.target);
+      });
+    }, { threshold: .35 });
+    nodes.forEach((n) => io.observe(n));
+  }
+
   R.stats = function (el, d) {
     const pubs = d.publications || [];
     const m = d.metrics;
-    let tiles;
+    const sc = (d.site.profile && d.site.profile.scholarStats) || null;
+    const hasScholar = sc && sc.citations;
+    let tiles, note = '';
 
-    if (m && m.totals && m.totals.citations) {
-      // Live figures. h-index and i10 come from the papers listed on this site,
-      // not from the raw OpenAlex author profile — see metrics-core.js.
+    if (hasScholar) {
+      // Google Scholar is the number academics actually quote, and it has the
+      // widest coverage (preprints, theses, non-indexed venues). It has no
+      // public API, so these three are entered by hand and dated.
       tiles = [
         { label: 'Peer-reviewed publications', value: pubs.length },
-        { label: 'Citations', value: nfmt(m.totals.citations), live: true },
+        { label: 'Citations', value: sc.citations },
+        { label: 'h-index', value: sc.hIndex },
+        { label: 'i10-index', value: sc.i10Index },
+        { label: 'Funded grants & projects', value: (d.grants || []).length },
+      ];
+      note = 'Citations, h-index and i10-index from <a href="' +
+        esc(sc.profileUrl || 'https://scholar.google.com') + '" target="_blank" rel="noopener">' +
+        'Google Scholar</a>' + (sc.asOf ? ', as of ' + esc(fmtDate(sc.asOf)) : '') +
+        (m && m.totals && m.totals.citations
+          ? '. Per-paper counts below come from <a href="' + esc(m.sourceUrl || 'https://openalex.org') +
+            '" target="_blank" rel="noopener">OpenAlex</a> and update automatically.'
+          : '.');
+    } else if (m && m.totals && m.totals.citations) {
+      tiles = [
+        { label: 'Peer-reviewed publications', value: pubs.length },
+        { label: 'Citations', value: m.totals.citations, live: true },
         { label: 'h-index', value: m.totals.hIndex, live: true },
         { label: 'i10-index', value: m.totals.i10Index, live: true },
         { label: 'Funded grants & projects', value: (d.grants || []).length },
       ];
+      note = 'Citation figures via <a href="' + esc(m.sourceUrl || 'https://openalex.org') +
+        '" target="_blank" rel="noopener">OpenAlex</a>, matched to the publications listed here' +
+        (m.updated ? ' &middot; last updated ' + esc(fmtDate(m.updated.slice(0, 10))) : '') + '.';
     } else {
       const stats = (d.site.stats || []).slice();
       if (stats[0]) stats[0].value = pubs.length;
@@ -391,18 +460,18 @@
 
     el.innerHTML = '<div class="wrap"><div class="stats">' + tiles.map((s) =>
       '<div class="stat">' +
-        '<div class="stat__value">' + esc(s.value) + esc(s.suffix || '') + '</div>' +
+        '<div class="stat__value" data-count="' + esc(s.value) + '" ' +
+          'data-suffix="' + esc(s.suffix || '') + '">' +
+          esc(nfmt(s.value)) + esc(s.suffix || '') + '</div>' +
         '<div class="stat__label">' + esc(s.label) +
           (s.live ? ' <span class="stat__live" title="Updated automatically from OpenAlex">' +
             '&#9679;</span>' : '') +
         '</div>' +
       '</div>').join('') + '</div>' +
-      (m && m.totals && m.totals.citations ? '<p class="stat__note">Citation figures via ' +
-        '<a href="' + esc(m.sourceUrl || 'https://openalex.org') + '" target="_blank" ' +
-        'rel="noopener">OpenAlex</a>, matched to the publications listed here and refreshed ' +
-        'automatically' + (m.updated ? ' &middot; last updated ' +
-        esc(fmtDate(m.updated.slice(0, 10))) : '') + '.</p>' : '') +
+      (note ? '<p class="stat__note">' + note + '</p>' : '') +
       '</div>';
+
+    wireCounters(el);
   };
 
   /** Citation impact: per-year bar chart + most-cited papers. */
@@ -438,9 +507,11 @@
       '<div class="wrap">' +
         '<div class="section-head"><span class="eyebrow">Impact</span>' +
           '<h2>Citation record</h2>' +
-          '<p>' + esc(nfmt(m.totals.citations)) + ' citations across ' +
-            esc(m.totals.matchedWorks) + ' indexed papers. Counts come from OpenAlex and ' +
-            'update on their own &mdash; nothing here is typed in by hand.</p></div>' +
+          '<p>Per-paper counts from <a href="' + esc(m.sourceUrl || 'https://openalex.org') +
+            '" target="_blank" rel="noopener">OpenAlex</a>, refreshed automatically: ' +
+            esc(nfmt(m.totals.citations)) + ' citations across ' + esc(m.totals.matchedWorks) +
+            ' indexed papers. This runs lower than the Google Scholar total above, because ' +
+            'Scholar also counts preprints, theses and venues OpenAlex does not index.</p></div>' +
         '<div class="grid" style="grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);' +
           'gap:2.5rem;align-items:start">' +
           '<div>' +
@@ -566,9 +637,14 @@
       ? '<a href="' + esc(p.url) + '"' + linkAttrs(p.url) + '>' + esc(p.title) + '</a>'
       : esc(p.title);
     const cites = CITES[p.id];
+    const MARK = { journal: 'journal', chapter: 'chapter', conference: 'podium' };
+    const KIND = { journal: 'Article', chapter: 'Chapter', conference: 'Paper' };
     return '<li class="pub" data-type="' + esc(p.type) + '" data-year="' + esc(p.year) + '" ' +
       'data-cites="' + esc(cites == null ? -1 : cites) + '">' +
-      '<span class="pub__ref">' + esc(p.id) + '</span>' +
+      '<span class="pub__ref" title="' + esc(KIND[p.type] || '') + '">' +
+        icon(MARK[p.type] || 'file') +
+        '<span>' + esc(p.id) + '</span>' +
+      '</span>' +
       '<div>' +
         '<div class="pub__title">' + t + '</div>' +
         '<div class="pub__authors">' + markName(p.authors) + '</div>' +
@@ -580,7 +656,8 @@
           (p.publisher ? '<span class="chip chip--accent">' + esc(p.publisher) + '</span>' : '') +
           (p.tags || []).map((x) => '<span class="chip">' + esc(x) + '</span>').join('') +
           (p.url ? '<a class="btn btn--sm btn--ghost" href="' + esc(p.url) + '"' +
-            linkAttrs(p.url) + '>' + icon('link') + 'View</a>' : '') +
+            linkAttrs(p.url) + '>' +
+            icon(/doi\.org|10\.\d{4}/.test(p.url) ? 'doi' : 'link') + 'View</a>' : '') +
         '</div>' +
       '</div></li>';
   }
@@ -847,15 +924,28 @@
         '<li><span><b>' + esc(r.role) + '</b><br><span class="muted">' +
         (r.url ? '<a href="' + esc(r.url) + '"' + linkAttrs(r.url) + '>' + esc(r.org) + '</a>' :
           esc(r.org)) + '</span></span></li>').join('') + '</ul></div>';
+    const rv = s.reviewer || {};
+    const venues = (title, ico, list) => !list || !list.length ? '' :
+      '<div><h3 style="font-family:var(--font-sans);font-size:1rem;font-weight:650;' +
+        'display:flex;align-items:center;gap:.5rem;margin-bottom:.9rem">' +
+        icon(ico) + esc(title) + ' <span class="chip">' + list.length + '</span></h3>' +
+      '<div class="venue-list">' + list.map((v) =>
+        '<span>' + esc(v) + '</span>').join('') + '</div></div>';
+
     el.innerHTML =
       '<div class="wrap">' +
         '<div class="section-head"><span class="eyebrow">Service</span>' +
           '<h2>Editorial roles &amp; professional networks</h2></div>' +
         '<div class="grid grid-3" style="gap:2rem;align-items:start">' +
-          block('Editorial', 'book', s.editorial) +
+          block('Editorial', 'journal', s.editorial) +
           block('Memberships', 'users', s.memberships) +
           block('Leadership & mentoring', 'award', s.leadership) +
         '</div>' +
+        ((rv.journals && rv.journals.length) || (rv.conferences && rv.conferences.length) ?
+          '<div class="reviewer-grid" style="margin-top:2.75rem">' +
+            venues('Journal reviewer', 'quote', rv.journals) +
+            venues('Conference reviewer', 'podium', rv.conferences) +
+          '</div>' : '') +
       '</div>';
   };
 
@@ -1099,8 +1189,14 @@
       nodes.forEach((n) => n.classList.add('is-visible')); return;
     }
     const io = new IntersectionObserver((entries) => {
+      // Stagger items that arrive together so a row of cards cascades in
+      // rather than all snapping at once.
+      let i = 0;
       entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        if (!e.isIntersecting) return;
+        e.target.style.setProperty('--reveal-delay', Math.min(i++, 6) * 65 + 'ms');
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: .06 });
     nodes.forEach((n) => io.observe(n));
